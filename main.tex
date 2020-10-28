@@ -4,19 +4,44 @@
 \usepackage[margin=0.8in]{geometry}
 \usepackage{tabularx}
 
-\title{Tienda de ropa riconuda} 
+
+% New Commands
+\newcommand{\nombredelproyecto}{Tienda de ropa}
+
+\title{\nombredelproyecto} 
 \author{Alejandro Barrachina Argudo \\
 David Cantador Piedras \\
 Rodrigo Sosa Sáez \\
 Juan Pantaleón Femenía Quevedo \\
+David Llanes Martín \\
 Sergio Sánchez Chamizo  \\
+Samuel Rodríguez Moreno \\
+Rodrigo Souto Santos
 }
 
 \date{\today}
 
 \begin{document}
+\begin{titlepage}
+    \makeatletter
+    {
+        \centering
+        \vspace*{4cm}
+        {\fontsize{40pt}{40pt}\scshape\textbf{\@title}\par}
 
-\maketitle
+
+        {\Huge Especificación de Requisitos de Software\par}
+
+        \vspace*{1cm}
+        {\Large\itshape
+            \@author
+            \par}
+    }
+    \vfill
+    \makeatother
+\end{titlepage}
+\newpage
+
 \section*{Control de cambios} %
 \noindent\begin{tabularx}{\textwidth}{ |l|l|p{5cm}|X| }
     \hline
@@ -44,32 +69,15 @@ Sergio Sánchez Chamizo  \\
     \hline
 \end{tabularx}
 
+\newpage
+\tableofcontents
+\newpage
 
-\section{introducción}
-\subsection{Propósito}
-Este proyecto va de una tienda de ropa, para que pueda gestionar inventario
-\subsection{Alcance}
-TODO
-\subsection{Definiciones,acrónimos y abreviaturas}
-\subsection{Referencias}
-\subsection{Resumen}
-\section{Descripción General }
-\subsection{Perspectiva del producto}
-Putos pelirrojos\\
-puto alex2
-\subsection{Perspectiva del producto}
-\subsection{Funciones del producto}
-\subsection{Características del usuario}
-\subsection{Restricciones}
-\subsection{Supuestos y dependencias}
-\subsection{Requisitos futuros}
-\section{Requisitos específicos}
-\subsection{Interfaces externos}
-\subsection{Requisitos funcionales}
-\subsection{Requisitos de rendimiento}
-\subsection{Requisitos sobre la persistencia de datos}
-\subsection{Restricciones de diseño}
-\subsection{Atributos del sistema software}
+\input{tex_files/introduccion.tex}
+\newpage
+\input{tex_files/general.tex}
+\newpage
+\input{tex_files/especifico.tex}
 
-\section*{Apéndices}
+
 \end{document}
