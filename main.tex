@@ -4,10 +4,18 @@
 \usepackage[margin=0.8in]{geometry}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{float}
+\usepackage{graphicx}
 
 
 % New Commands
 \newcommand{\nombredelproyecto}{Tienda de ropa}
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}%
+    {-3.25ex plus -1ex minus -0.2ex}%
+    {1.5ex plus 0.2ex}%
+    {\normalfont\normalsize\bfseries}}
+\makeatother
 
 \title{\nombredelproyecto} 
 \author{Alejandro Barrachina Argudo \\
