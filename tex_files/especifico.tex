@@ -31,7 +31,17 @@ Se obtienen los datos del administrador y se buscan en la \gls{bd}. Si se encuen
 \paragraph{Sancionar cliente}
 \paragraph{Cambiar nombre}
 \paragraph{Cambiar contraseña}
+El usuario indica su contraseña actual y el sistema comprueba si dicha contraseña es corecta o no. En caso de ser correcta el usuario indicará a continuacion la nueva contraseña. Si esta contraseña es valida, el sistema indicará de que el cambio de contraseña ha sido satisfactorio.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/cambiar_contrasena.png}
+\end{figure}
 \paragraph{Login}
+El usuario introduce su nombre usuario y contraseña en el sistema. Tras introducir los datos el sistema determina si son correctos o no. Si son correctos, el sistema indicará que el usuario se ha logueado correctamente. En caso contrario, se informa que no ha sido logueado.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/login.png}
+\end{figure}
 \paragraph{Logout}
 \subsection{Gestión de inventario}
 \paragraph{Añadir producto}
