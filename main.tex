@@ -1,11 +1,20 @@
-\documentclass{article}
+\documentclass[12pt]{article}
+\usepackage[a4paper, margin=1in, headheight=14pt]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
-\usepackage[margin=0.8in]{geometry}
 \usepackage{tabularx}
-\usepackage{hyperref}
-\usepackage{float}
 \usepackage{graphicx}
+\usepackage{float}
+\usepackage[xindy, nomain, acronym, acronyms, nonumberlist, nopostdot, toc, section=subsection,nogroupskip]{glossaries}
+\usepackage[automake]{glossaries-extra}
+\usepackage{setspace}
+\usepackage{anyfontsize}
+\usepackage[toc,page]{appendix} % Remove toc,page to render wo appendix
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{datetime}
+
+\setabbreviationstyle[acronym]{short-long}
 
 
 % New Commands
@@ -28,6 +37,9 @@ Sergio Sánchez Chamizo  \\
 Samuel Rodríguez Moreno \\
 Rodrigo Souto Santos
 }
+
+\makeglossaries
+\include{glossary}
 
 \date{\today}
 

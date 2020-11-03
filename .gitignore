@@ -1,2 +1,5 @@
 *.synctex.gz
 *.xdv
+*.aux
+*.xdy
+*.acn
