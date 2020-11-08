@@ -53,9 +53,29 @@ El usuario introduce su nombre usuario y contraseña en el sistema. Tras introdu
 \subsection{Gestión de pedidos}
 \paragraph{Añadir promoción}
 \paragraph{Quitar promoción}
+Se obtienen los datos del administrador y se comprueba si existe. Si existe, podrá consultar dicha promoción y eliminarla, al terminar se informará del éxito de la operación. Por el contrario si no se encuentra el usuario, se informará de que se ha producido un error.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/quitar_promocion.png}
+\end{figure}
 \paragraph{Compras}
+Se introduce el nombre de usuario y la contraseña del cliente. Tras introducir los datos el sistema determina si son correctos o no. Si son correctos el usuario podrá añadir productos a su cesta y cuando quiera comprar alguno, se comprobará si tiene suficiente dinero en el monedero virtual, si lo tiene, se informará del éxito de su compra si no, se informará de saldo insuficiente. En el caso de no existir el usuario, se informará de ello.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/comprar_producto.png}
+\end{figure}
 \paragraph{Devolución de pedido}
+Se introduce el usuario y la contraseña del cliente. Si existe, podrá consultar sus productos comprados y proceder a su devolución, en tal caso, el saldo de dicho producto comprado volverá al monedero virtual de dicho cliente. En caso de no existir dicho usuario, se informará de ello.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/realizar_devolucion.png}
+\end{figure}
 \paragraph{Reservar producto}
+Se obtiene el usuario y contraseña del usuario y se comprueban en la \gls{bd}. Si se encuentran, el cliente podrá consultar y reservar dicho producto en el caso de que tenga suficiente saldo en su monedero virtual, en tal caso se informará del éxito del producto reservado, si no, se informará al cliente de saldo insuficiente. En el caso de no existir usuario se informará de ello.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/reservar_producto.png}
+\end{figure}
 \subsection{Requisitos de rendimiento}
 \subsection{Requisitos sobre la persistencia de datos}
 \subsection{Restricciones de diseño}
