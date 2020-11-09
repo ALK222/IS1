@@ -49,9 +49,29 @@ El usuario introduce su nombre usuario y contraseña en el sistema. Tras introdu
 \paragraph{Actualizar stock}
 \paragraph{Quitar producto}
 \paragraph{Aplicar descuento}
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, selecciona la opción de descuentos, verifica si el cliente tiene derecho a un descuento, si el usuario no posee ninguna opción a descuenta sale, y si tiene opción a descuento lo aplica al producto y actualiza el precio final del producto o compra total.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/aplicar_descuento.png}
+\end{figure}
 \paragraph{Informar de desperfecto}
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, selecciona un artículo, escribe el informe acerca de los desperfectos del mismo y al final lo envía.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/informar_de_desperfecto.png}
+\end{figure}
 \subsection{Gestión de pedidos}
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, consulta en la base de datos el listado de todos los pedidos realizados, selecciona mediante el número de pedido que desea consultar, verifica su estado ya sea en preparación, en tránsito o entregado.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/gestion_de_pedidos.png}
+\end{figure}
 \paragraph{Añadir promoción}
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, consulta la lista de los productos en la base de datos, se selecciona el producto(s) que se quiere promocionar, aplico la promoción, y actualizo el precio final del producto con la promoción incluida.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/añadir_promocion.png}
+\end{figure}
 \paragraph{Quitar promoción}
 Se obtienen los datos del administrador y se comprueba si existe. Si existe, podrá consultar dicha promoción y eliminarla, al terminar se informará del éxito de la operación. Por el contrario si no se encuentra el usuario, se informará de que se ha producido un error.
 \begin{figure}[H]
