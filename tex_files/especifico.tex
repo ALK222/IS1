@@ -27,21 +27,25 @@ Se obtienen los datos del administrador y se buscan en la \gls{bd}. Si se encuen
     \includegraphics[width=0.8\textwidth]{Use_Cases/baja_admin.png}
 \end{figure}
 \paragraph{Alta empleado}
+Se obtienen los datos del empleado y se buscan en la \gls{bd}. Si no se encuentra el empleado se crea el nuevo usuario y se informa de que ha tenido exito, si se encuentra ya el usuario registrado se informara con un error.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Alta_empleado.png}
 \end{figure}
 \paragraph{Baja empleado}
+Se obtienen los datos del empleado y se buscan en la \gls{bd}. Si se encuentra se borrara el usuario y se informará de que la operación tuvo exito, si el usuario no se encuentra se informará con un error
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Baja empleado.png}
 \end{figure}
 \paragraph{Sancionar cliente}
+Se comprueba si el aviso es una infracción de las normas, si es el cliente es un infractor reincidente en la \gls{bd}, si lo es se incrementa la magnitud de la sanción, sino se actualiza en la \gls{bd} y se sanciona, por otro lado si no es una infracción no se hace nada.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Sancionar Cliente.png}
 \end{figure}
 \paragraph{Cambiar nombre}
+Se solicitan los datos del usuario y se comprueba en la \gls{bd} si existe o no, si existe se solicitan los datos a los que se quiere cambiar, después se comprueba si el nombre es válido, si lo es se actualizan los datos, sino se informa de que el nombre no es valido y se termina.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Actualizar Nombre.png}
@@ -59,11 +63,27 @@ El usuario introduce su nombre usuario y contraseña en el sistema. Tras introdu
     \includegraphics[width=0.8\textwidth]{Use_Cases/login.png}
 \end{figure}
 \paragraph{Logout}
-\subsection{Gestión de inventario}
+\subsubsection{Gestión de inventario}
 \paragraph{Añadir producto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_añadirProducto.png}
+\end{figure}
 \paragraph{Buscar producto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_BuscarProducto.png}
+\end{figure}
 \paragraph{Actualizar stock}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_ActualizarStock.png}
+\end{figure}
 \paragraph{Quitar producto}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}
+\end{figure}
 \paragraph{Aplicar descuento}
 Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, selecciona la opción de descuentos, verifica si el cliente tiene derecho a un descuento, si el usuario no posee ninguna opción a descuenta sale, y si tiene opción a descuento lo aplica al producto y actualiza el precio final del producto o compra total.
 \begin{figure}[H]
@@ -76,7 +96,7 @@ Ingresar usuario y contraseña, comprobar si la persona está registrada en la B
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/informar_de_desperfecto.png}
 \end{figure}
-\subsection{Gestión de pedidos}
+\subsubsection{Gestión de pedidos}
 Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, consulta en la base de datos el listado de todos los pedidos realizados, selecciona mediante el número de pedido que desea consultar, verifica su estado ya sea en preparación, en tránsito o entregado.
 \begin{figure}[H]
     \centering
