@@ -67,7 +67,7 @@ El usuario introduce su nombre usuario y contraseña en el sistema. Tras introdu
     \includegraphics[width=0.8\textwidth]{Use_Cases/login.png}
 \end{figure}
 \paragraph{Logout}
-EL usuario confirma que va a cerrar sesión. Si el usuario confirma que cierra sesion, el sistema indicará que se ha realizado la acción correctamente.
+EL usuario confirma que va a cerrar sesión. Si el usuario confirma que cierra sesión, el sistema indicará que se ha realizado la acción correctamente.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Logout.png}
@@ -94,25 +94,25 @@ EL usuario confirma que va a cerrar sesión. Si el usuario confirma que cierra s
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}
 \end{figure}
 \paragraph{Aplicar descuento}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, selecciona la opción de descuentos, verifica si el cliente tiene derecho a un descuento, si el usuario no posee ninguna opción a descuenta sale, y si tiene opción a descuento lo aplica al producto y actualiza el precio final del producto o compra total.
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, selecciona la opción de descuentos, verifica si el cliente tiene derecho a un descuento, si el usuario no posee ninguna opción a descuenta sale, y si tiene opción a descuento lo aplica al producto y actualiza el precio final del producto o compra total.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/aplicar_descuento.png}
 \end{figure}
 \paragraph{Informar de desperfecto}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, selecciona un artículo, escribe el informe acerca de los desperfectos del mismo y al final lo envía.
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, selecciona un artículo, escribe el informe acerca de los desperfectos del mismo y al final lo envía.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/informar_de_desperfecto.png}
 \end{figure}
 \subsubsection{Gestión de pedidos}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, consulta en la base de datos el listado de todos los pedidos realizados, selecciona mediante el número de pedido que desea consultar, verifica su estado ya sea en preparación, en tránsito o entregado.
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, consulta en la \gls{bd} el listado de todos los pedidos realizados, selecciona mediante el número de pedido que desea consultar, verifica su estado ya sea en preparación, en tránsito o entregado.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/gestion_de_pedidos.png}
 \end{figure}
 \paragraph{Añadir promoción}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la Base de datos. Si el usuario no existe sale. Si el usuario existe, consulta la lista de los productos en la base de datos, se selecciona el producto(s) que se quiere promocionar, aplico la promoción, y actualizo el precio final del producto con la promoción incluida.
+Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, consulta la lista de los productos en la \gls{bd}, se selecciona el producto(s) que se quiere promocionar, aplico la promoción, y actualizo el precio final del producto con la promoción incluida.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/añadir_promocion.png}
@@ -142,6 +142,18 @@ Se obtiene el usuario y contraseña del usuario y se comprueban en la \gls{bd}. 
     \includegraphics[width=0.8\textwidth]{Use_Cases/reservar_producto.png}
 \end{figure}
 \subsection{Requisitos de rendimiento}
+Las operaciones de modificación de datos serán accesibles desde un mismo sitio físico, aunque en distintas máquinas, por ello la base de datos solo debe ser modificable desde un \gls{host} local. Los datos serán accesibles para lectura desde internet.
 \subsection{Requisitos sobre la persistencia de datos}
+\noindent\begin{tabularx}{\textwidth}{ l X }
+    % \hline
+    Producto-Cliente               & ``Un cliente no podrá comprar productos mientras esté sancionado"                                                \\
+    Empleado-Producto              & ``El Empleado podrá dar de alta productos"                                                                       \\
+    Empleado-Producto              & ``El Empleado podrá dar de baja productos"                                                                       \\
+    Empleado-Producto              & ``El Empleado podrá modificar los datos de los juegos"                                                           \\
+    Administrador-Producto-Cliente & ``El administrador podrá sancionar al cliente en caso de devolución fraudulenta del producto"                    \\
+    Administrador-Empleado-Cliente & ``El administrador podrá cambiar las credenciales de los clientes y empleados bajo la demanda de dicho usuario'' \\
+\end{tabularx}
 \subsection{Restricciones de diseño}
+El servidor sólo estaría disponible para ordenadores con Windows y Linux dado que este no cuenta con soporte para dispositivos Android ni dispositivos de la marca Apple.
 \subsection{Atributos del sistema software}
+La aplicación será software libre. Presentará una alta mantenibilidad sin perder fiabilidad para permitir que, en un futuro, más gente pueda contribuir al proyecto de manera sencilla y menos problemática.
