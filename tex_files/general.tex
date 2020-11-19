@@ -1,19 +1,19 @@
 \section{Descripción General }
 \label{sec:desc_gen}
 \subsection{Perspectiva del producto}
-Nuestro proyecto software está ideado para integrarse con todos los productos de la tienda, con los empleados, los clientes y el sistema.
-En un principio nuestro producto estará adaptado para gestionar los trámites de compra entre los clientes y la propia tienda de ropa. También se adaptará para un acceso multiplataforma.
-Desde un punto de vista de la adaptación dentro del propio software que usa la tienda de ropa, nuestra aplicación será compatible con cualquier sistema operativo (aunque se recomienda Windows ya que será diseñada especialmente para este).
-Respecto a los backups, usaremos los que nos proporcione el propio sistema de la \gls{bd} ya que será un sistema centralizado para cada tienda de ropa.
+El proyecto software está ideado para integrarse con todos los productos de la tienda, con los empleados, los clientes y el sistema.
+En un principio el producto estará adaptado para gestionar los trámites de compra entre los clientes y la propia tienda de ropa. También se adaptará para un acceso multiplataforma.
+Desde un punto de vista de la adaptación dentro del propio software que usa la tienda de ropa, la aplicación será compatible con cualquier sistema operativo.
+Respecto a los backups, se hará los que nos proporcione el propio sistema de la \gls{bd} ya que será un sistema centralizado para cada tienda de ropa.
 \subsection{Funciones del producto}
-Desde un punto de vista más general, permitirá a la tienda de ropa unificar todo el portal
+Desde un punto de vista más general, la solución permitirá a la tienda de ropa unificar todo el portal
 informativo facilitando el acceso de la información pertinente a los usuarios.\\
 Los subsistemas serían:
 
 \begin{itemize}
-    \item\textbf{Cliente: }Permitirá la creación, eliminación de un cliente, cambiar contraseña, cambiar nombre, Login y Logout, buscar productos y añadirlos al carrito, aplicar descuentos, informar de desperfectos, comprobar el estado del pedido, comprar productos, reservarlos y devolverlos. Puede ser accesible por el propio usuario que ejerce de cliente y por el administrador.
+    \item\textbf{Cliente: }Permitirá la creación, eliminación de un cliente, cambiar contraseña, cambiar nombre, Login y Logout, buscar productos y añadirlos al carrito, aplicar descuentos, informar de desperfectos, comprobar el estado del pedido, comprar productos, reservarlos y devolverlos. Puede ser accesible por el propio usuario que ejerce de cliente.
     \item\textbf{Administrador: }Permitirá tanto la creación cómo la eliminación de un administrador, sancionar a un cliente, cambiar contraseña, cambiar nombre, Login y Logout, gestión de inventario cómo actualizar Stock, quitar productos, añadir promociones y quitarlas. Sólo es accesible por el propio usuario que ejerce de administrador, es decir, un administrador sólo puede realizar operaciones sobre el propio perfil de administrador.
-    \item\textbf{Empleado: }Permitirá la creación, eliminación de un empleado, cambiar contraseña, cambiar nombre, Login y Logout. Puede ser accesible por el propio usuario que ejerce de empleado y por el administrador.
+    \item\textbf{Empleado: }Permitirá la creación, eliminación de un empleado, cambiar contraseña, cambiar nombre, Login y Logout. Puede ser accesible por el propio usuario que ejerce de empleado.
 \end{itemize}
 
 \subsection{Características del usuario}
@@ -26,39 +26,33 @@ de los datos de los clientes según la Ley Orgánica de Protección de Datos y G
 los Derechos Digitales aprobada el 23-11-2018.
 
 Respecto a las limitaciones de hardware, no son muy elevadas ya que los ordenadores
-usados por estas tiendas de ropa dan de sobra para ejecutar de forma fluida nuestra
-aplicación, que no hace uso de muchos recursos.
+usados por estas tiendas de ropa son lo suficientemente potentes como para ejecutar de forma fluida nuestra
+aplicación, dado a que no hace uso de muchos recursos.
 
-Las interfaces serán simples ya que este programa será usado para los clientes, empleados y
+Las interfaces serán simples ya que este programa será usado por los clientes, empleados y
 administradores de sistema, por lo que debe ser una interfaz clara e intuitiva.
 
 Hay que tener en cuenta que esta aplicación estará instalada en cada uno de los
 terminales y ordenadores de los usuarios en diferentes localizaciones geográficas, pero
 con una base de datos común, de tal forma que habrá que evitar problemas de
-modificación de datos, así como un posible colapso de la base de datos.
+modificación de datos, así como un posible colapso de la base de datos. Véase el apartado \ref{sec:req_pers_dat}~(\nameref{sec:req_pers_dat}).
 
 Hay que tener en cuenta que el sistema necesitará estar apagado unas ciertas horas a
 la semana (se intentará que sea cuando afecte al menor número de usuarios) para la
 realización de control y auditoría.
 
-Respecto a los lenguajes de programación, la mayor restricción es nuestro
-conocimiento ya que son solo los obtenidos a lo largo de primero y este curso, por lo
-que el lenguaje de programación utilizado será Java. A nivel de entorno de desarrollo,
-usaremos Eclipse ya que lo conocemos y nos ahorraremos el tiempo de aprendizaje.
+En cuanto al lenguaje de programación las restricciones que se impondrán serán las restricciones propias de java y de la \gls{jvm}.
 Los protocolos de comunicación serán sencillos ya que la única comunicación va a ser
 de cada terminal con la base de datos que se hará a través de internet.
 
-La fiabilidad de nuestra aplicación en principio no debería que ser muy elevada, de
-todos modos, y como ya comentamos antes, nuestro objetivo es diferenciarnos de la
-competencia a través de nuestro elevado nivel de calidad, por lo que buscamos un
-nivel de fiabilidad elevado, así como la seguridad y robustez.
+
 
 \subsection{Supuestos y dependencias}
-Respecto a los cambios esperados, hemos considerado el hecho de que la tienda de ropa a
+Respecto a los cambios esperados, considerados el hecho de que la tienda de ropa a
 la que vendemos el producto no sea compatible con la comunicación a través de
 internet. En ese caso, dejarían de ser nuestro target.
 
-Al utilizar java como lenguaje de programación nos podemos asegurar de que la solución funcione en cualquier sistema operativo ya que java es un lenguaje multiplataforma, lo que nos permite más flexibilidad a la hora de desarrollar el programa y hacer cambios al mismo. La \gls{bd} se puede instalar en sistemas Linux y Windows, ya que son los sistemas soportados por SQL de forma nativa sin necesidad de utilizar contenedores externos, y ya que son los sistemas mayoritariamente usados para servidores.
+Al utilizar java como lenguaje de programación nos podemos asegurar de que la solución funcione en cualquier sistema operativo ya que java es un lenguaje multiplataforma, lo que nos permite más flexibilidad a la hora de desarrollar el programa y hacer cambios al mismo. La \gls{bd} se puede instalar en sistemas Linux y Windows, ya que son los sistemas soportados por \gls{sql} de forma nativa sin necesidad de utilizar contenedores externos, y ya que son los sistemas mayoritariamente usados para servidores.
 
 \subsection{Requisitos futuros}
 Esta primera versión el administrador del sistema tendrá un papel fundamental en
@@ -66,5 +60,5 @@ muchas situaciones, pero cuando el proceso tenga más madurez y pase por una ser
 de revisiones se obtendrán módulos más claros con roles bien definidos.
 
 Algunos casos de uso cambiarán, y se optimizarán los módulos creados en función de
-las necesidades del cliente, pero la base funcional no cambiará ya que hemos
+las necesidades del cliente, pero la base funcional no cambiará ya que se ha
 delimitado el software a los actores y funcionalidades definidas en este documento.
