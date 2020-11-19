@@ -97,24 +97,28 @@ EL usuario confirma que va a cerrar sesión. Si el usuario confirma que cierra s
 \end{figure}
 \newpage
 \paragraph{Añadir producto}
+El usuario introduce los credenciales, incluyendo el nombre de usuario y su contraseña. Tras introducir los datos el sistema comprueba si dichos datos existen en la BD. Si existe, se comprueba el ID del producto que desea añadir, y a continuación, se comprueba los ID de los productos de su cesta si tiene alguno, de forma que si coincide con alguno, se suma una cantidad del mismo producto a la cesta, y sino, se añade un nuevo producto a la cesta.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_añadirProducto.png}
 \end{figure}
 \newpage
 \paragraph{Buscar producto}
+Se piden los datos del producto a buscar, si estos son correctos, se busca el producto en la BD de datos, si este existe, se muestra el producto, sino, se informa de que no existen existencias del mismo.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_BuscarProducto.png}
 \end{figure}
 \newpage
 \paragraph{Actualizar stock}
+Se solicitan los datos de administrador, o empleado, si son correctos, se comprueba el ID del producto a añadir, y se solicita una modificacion en la BD, si esta es aprobada, se actualiza la BD, sino se informa de que no se ha podido actualizar la BD.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_ActualizarStock.png}
 \end{figure}
 \newpage
 \paragraph{Quitar producto}
+Se solicita la contraseña y usuario de administrador. Si estos son correctos, se busca el producto a eliminar, y se solicita modificar la BD, si es aprobada la solicitud, se elimina dicho producto de la BD, y se informa de que se a quitado. Sino, se informa de que no se ha permitido la modificación.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}
