@@ -3,6 +3,7 @@ on: [push]
 jobs:
   build_latex:
     runs-on: ubuntu-latest
+    working-directory: ./p1
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
@@ -32,4 +33,3 @@ jobs:
         with:
           name: PDF
           path: main.pdf
-
