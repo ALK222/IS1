@@ -3,4 +3,5 @@
 *.aux
 *.xdy
 *.acn
+*.log
 build/
