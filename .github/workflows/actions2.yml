@@ -1,4 +1,4 @@
-name: Build SRS
+name: Build PDP
 on: [push]
 jobs:
     build_latex:
