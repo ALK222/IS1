@@ -1,0 +1,24 @@
+\section{Introducción}
+\subsection{Propósito del plan}
+\begin{itemize}
+	\item Tener un texto formal con las planificaciones, estrategias y acciones estimadas para realizar el proyecto de forma ordenada y completando plazos.
+	\item Tener en cuenta plazos, riesgos, actividades, equipo, costes, cambios, etc. Todo de forma ordenada para que el trabajo que se ejecute siga la dirección que necesitamos.
+\end{itemize}
+
+\subsection{Ámbito del proyecto y objetivos}
+\subsubsection{Declaración del proyecto}
+Esta aplicación esta dirigida a tiendas de ropa que quieran dar un soporte online a sus clientes, serán los clientes los que la utilicen para tramitar sus pedidos y los gestores los que la utilicen para gestionar el inventario de la tienda. Esto aporta un beneficio económico directo ya que permite aumentar el público target de la tienda.
+\subsubsection{Funciones principales}
+El software permitirá gestionar los productos de la tienda y gestionar los pedidos por los usuarios que se registren y decidan hacer compras desde la aplicación. También permitirá gestionar los gestores y los usuarios.
+\subsubsection{Aspectos de rendimiento}
+Todas las funciones a excepción del renderizado de la interfaz están gestionadas por el servidor de la propia tienda, por lo tanto estará limitado por la potencia del servidor, las conexiones concurrentes al mismo y la potencia del ordenador del usuario y de su velocidad de red.
+\subsubsection{Restricciones y técnicas de gestión}
+En las funciones principales de gestión de usuarios se pedirá el DNI y la contraseña del usuario.
+
+\noindent La baja de dicho usuario se ejecutará si y solo si el usuario ya está registrado en la base de datos.
+
+El alta de un nuevo producto se realizará siempre que esté en perfecto estado. La baja de un producto se hará igual que la de un usuario, solo se hará si el producto está registrado en la base de datos.
+
+Las funciones principales de gestión del gestor, el alta de un gestor y para la baja de un gestor al igual que las anteriores se necesita que el gestor esté registrado en la BBDD.
+
+\subsection{Modelo de proceso}
