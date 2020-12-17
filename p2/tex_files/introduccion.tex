@@ -15,11 +15,20 @@ Todas las funciones a excepción del renderizado de la interfaz están gestionad
 \subsubsection{Restricciones y técnicas de gestión}
 En las funciones principales de gestión de usuarios se pedirá el DNI y la contraseña del usuario.
 
-\noindent La baja de dicho usuario se ejecutará si y solo si el usuario ya está registrado en la base de datos.
+\noindent La baja de dicho usuario se ejecutará si y solo si el usuario ya está registrado en la \gls{bd}.
 
 El alta de un nuevo producto se realizará siempre que esté en perfecto estado. La baja de un producto se hará igual que la de un usuario, solo se hará si el producto está registrado en la base de datos.
 
 Las funciones principales de gestión del gestor, el alta de un gestor y para la baja de un gestor al igual que las anteriores se necesita que el gestor esté registrado en la BBDD.
 
 \subsection{Modelo de proceso}
-Se va a usar el modelo de proceso RUP, basado en componentes conectados a través de interfaces y dirigido por casos de uso. En espiral, de forma iterativa se siguen las siguientes fases de desarollo
+Se va a usar el modelo de proceso \gls{rup}, basado en componentes conectados a través de interfaces y dirigido por casos de uso. En espiral, de forma iterativa se siguen las siguientes fases de desarrollo:
+\begin{itemize}
+	\item\textbf{Requisitos (Comunicación):} mediante la comunicación con el cliente se realiza una especificación de los requisitos que deberá cumplir la aplicación.
+	\item\textbf{Análisis (Planteamiento):} se crea un plan de proyecto evaluando los riesgos, se definen las características y funciones mediante casos de uso preliminares. Se crea una arquitectura basada en subsistemas o componentes muy genérica, que deberá ser desarrollada durante la fase de diseño mediante modelado.
+	\item\textbf{Diseño (Modelado):} Se mejoran y amplían los casos de uso de la fase de análisis. Se modelan los subsistemas y se realiza la línea de base de la arquitectura del sistema.
+	\item\textbf{Implementación (Construcción): }Se desarrollan o adquieren los componentes del software necesario para completar los casos de uso necesarios. Se completan los modelos (requisitos, casos de uso, etc.) para poder implementarlos en código fuente y se efectúan pruebas unitarias de cada uno de los componentes. También se deben realizar pruebas de integración para comprobar que la aplicación funciona.
+	\item\textbf{Prueba (Despliegue):} los usuarios finales o una muestra de estos realizan pruebas Beta\footnote{Beta: fase de desarrollo de un software en la que se realiza una eliminación de errores de forma activa}, que reportan los defectos y carencias del software. En esta fase se generan también los manuales de usuario, paquetes de instalación. plataformas de ayuda necesarias para el lanzamiento.
+\end{itemize}
+
+Al finalizar la fase de despliegue tenemos una aplicación funcional que puede ser usada. Se incrementa la versión del software y se realiza la siguiente iteración del proceso. Nosotros nos encontramos en esta entrega en la fase de elaboración (que incluye parte de los requisitos, pero sobre todo análisis) de la primera iteración.
