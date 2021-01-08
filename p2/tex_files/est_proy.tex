@@ -1,1 +1,42 @@
-.
+\section{Estimaciones del proyecto}
+\subsection{Datos históricos}
+Este grupo no ha realizado proyectos anteriormente, y ninguno de los componentes
+cuenta con experiencia en proyectos usando Ingenieríıa del Software, por lo que se carece
+de datos históricos para hacer las estimaciones.
+\subsection{Técnicas de estimación}
+Se va a utilizar una técnica de estimación basada en la descomposición del proceso
+(EDT) ya que así podemos descomponer el proyecto en funciones principales y en tareas
+lo que implica que se pueda realizar una estimación del costo y del esfuerzo del proyecto
+de forma escalonada.
+
+\subsection{Estimaciones de esfuerzo, coste y duración}
+La fecha de comienzo del proyecto fue el 1 de octubre de 2020 y dedicando 2 días a la semana para su desarrollo. Este proyecto no tendrá ningún coste de carácter económico, sólo tendrá un coste de esfuerzo. 
+La estimación de esfuerzo por cada uno de los módulos del sistema que se desarrollan en el proyecto son:
+\begin{itemize}
+    \item \textbf{\gls{mg}}: El programa podrá gestionar las cuentas de los clientes  y la gestión de los préstamos.Los clientes nuevos se  podrán crear una cuenta nueva,  añadir tarjetas nuevas  y aprobar o denegar préstamos. Los clientes que ya tengan cuenta, se les podrá cambiar el titular, la clave de seguridad o eliminar la cuenta, así como cambiar el pin de la tarjeta o desbloquearla y también se les podrá aprobar o denegar los préstamos. Se estima que para este módulo se necesitarán ocho iteraciones para completarlo. En este módulo intervendrán dos miembros del equipo en el análisis, tres en el diseño, dos en la codificación y dos en las pruebas.
+    \item \textbf{\gls{mc}}: El programa gestiona parte de las cuentas del cliente,  las tarjetas de dicho cliente y la gestión de las acciones del cliente. Los clientes podrán actualizar datos como, sus nóminas, hacer transferencias, contactar con los gestores o solicitar un préstamo, así como  comprar y vender acciones y gestionar sus tarjetas, bloqueándolas, descargándolas o cargándolas. Se estima que para este módulo se necesitarán cinco iteraciones para completarlo. En este módulo intervendrán tres miembros del equipo en el análisis, cuatro en el diseño, tres en la codificación y tres en las pruebas.
+\end{itemize}
+ 
+Suponiendo que se trabajará 8 horas diarias, durante 22 días al mes sacamos los siguientes resultados cuya medida sería persona-día(pd). Un día tiene 22(pd)
+
+\begin{table}[H]
+\begin{adjustwidth}{-2cm}{-1cm}
+    \centering
+    \noindent\begin{tabularx}{1.25\textwidth}{|>{\columncolor[gray]{0.8}}X|X|X|X|X|X|X|X|}
+        \hline
+        \rowcolor{gray}
+        Módulo & Planificación & A. de Riesgo & Análisis & Diseño & Codificación & Prueba & Esf. Total  \\
+        \hline
+        \gls{mg} & & & 44 & 66 & 44 & 44 & 198 \\
+        \hline
+        \gls{mc} & & & 66 & 88 & 66 & 66 & 286 \\
+        \hline
+        Esf. Total & 11 & 11 & 110 & 154 & 110 & 110 & 506 \\
+        \hline
+        Pct & 2,173913043 & 2,173913043 & 21,73913043 & 30,43478261 & 21,73913043 & 21,73913043 & 100\% \\
+        \hline
+    \end{tabularx}
+    \caption{Estimaciones del proyecto}
+    \label{tab:est_proy}
+\end{adjustwidth}
+\end{table}
