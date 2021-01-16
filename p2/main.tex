@@ -5,7 +5,7 @@
 \usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage[xindy, nomain, acronym, acronyms, nonumberlist, nopostdot, toc, section=subsection,nogroupskip]{glossaries}
+\usepackage[xindy, nomain, acronym, acronyms, nonumberlist, nopostdot, toc, section=section,nogroupskip]{glossaries}
 \usepackage[automake]{glossaries-extra}
 \usepackage{setspace}
 \usepackage{anyfontsize}
@@ -16,9 +16,9 @@
 \usepackage[table]{xcolor}
 \usepackage{colortbl}
 \usepackage{changepage}
-
-
-
+\usepackage{longtable}
+\usepackage{makecell}
+\usepackage{amssymb}
 % New Commands
 \newcommand{\nombredelproyecto}{Tienda de ropa}
 
@@ -29,6 +29,12 @@
     {1.5ex plus 0.2ex}%
     {\normalfont\normalsize\bfseries}}
 \makeatother
+
+\definecolor{riskred}{HTML}{CC4125}
+\definecolor{riskyellow}{HTML}{FFD966}
+\definecolor{riskgreen}{HTML}{6AA84F}
+\definecolor{riskpurple}{HTML}{B4A7D6}
+\definecolor{riskblue}{HTML}{00FFFF}
 
 \title{\nombredelproyecto} 
 \author{Alejandro Barrachina Argudo \\
@@ -104,6 +110,7 @@ Rodrigo Souto Santos
 \input{tex_files/org_pers.tex}
 \newpage
 \input{tex_files/mec_seg.tex}
-
+\newpage
+\printglossary[title=Apendice A. Glosario]
 
 \end{document}
