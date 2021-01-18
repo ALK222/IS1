@@ -28,6 +28,7 @@ Para ello vamos a utilizar una tabla SQAS-SEI.
 			\hline
 		\end{tabularx}
 	\end{adjustwidth}
+	\caption{Tabla SQA-SEI 1}
 \end{table}
 
 
@@ -55,6 +56,7 @@ Para ello vamos a utilizar una tabla SQAS-SEI.
 			\hline
 		\end{tabularx}
 	\end{adjustwidth}
+	\caption{Tabla SQA-SEI 2}
 \end{table}
 
 \begin{table}[H]
@@ -78,6 +80,7 @@ Para ello vamos a utilizar una tabla SQAS-SEI.
 			\hline
 		\end{tabularx}
 	\end{adjustwidth}
+	\caption{Tabla SQA-SEI 3}
 \end{table}
 \newpage
 \subsection{Priorización de riesgos del proyecto}
@@ -91,43 +94,50 @@ Los niveles de riesgo son:
 	\item\textbf{IN: Intolerable.} No puede obviarse su gestión bajo ningún concepto.
 
 \end{itemize}
-\begin{table}[H]
+\begin{adjustwidth}{0cm}{-8cm}
+	\begin{multicols}{2}
+		\begin{table}[H]
+			\fontsize{8}{9}\selectfont
+			\centering
+			\begin{tabularx}{0.7\textwidth}{|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|X|}
+				\hline
+				Relación de Probabilidad y Severidad & Frecuente                                         & Probable                                              & Ocasional                                             & Remoto                                               & Improbable                               \\
+				\hline
+				Catastrófico                         & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskred}E. bloquear tarjeta del cliente    & \cellcolor{riskyellow} E. realizar una transferencia & \cellcolor{riskgreen} E. vender acciones \\
+				\hline
+				Crítico                              & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline
+				E. ingresar nómina en cuenta         & \cellcolor{riskpurple}E. comprar acciones                                                                                                                                                                                                                           \\
+				\hline
+				Serio                                & \cellcolor{riskyellow}                            & \cellcolor{riskyellow} E. seleccionar cliente\newline
+				E. solicitar un préstamo\newline
+				E. aprobar un préstamo\newline
+				E. denegar un préstamo\newline       & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                & \cellcolor{riskblue}                                                                                                                                    \\
+				\hline
+				Menor                                & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                  & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
+				E. contactar con gestor\newline
+				E. desbloquear tarjeta del cliente   & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                   \\
+				\hline
 
-	\begin{adjustwidth}{-2cm}{-2cm}
-		\small
-		\centering
-		\begin{tabularx}{1.2\textwidth}{|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|X|}
-			\hline
-			Relación de Probabilidad y Severidad & Frecuente                                         & Probable                                              & Ocasional                                             & Remoto                                               & Improbable                               \\
-			\hline
-			Catastrófico                         & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskred}E. bloquear tarjeta del cliente    & \cellcolor{riskyellow} E. realizar una transferencia & \cellcolor{riskgreen} E. vender acciones \\
-			\hline
-			Crítico                              & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline
-			E. ingresar nómina en cuenta         & \cellcolor{riskpurple}E. comprar acciones                                                                                                                                                                                                                           \\
-			\hline
-			Serio                                & \cellcolor{riskyellow}                            & \cellcolor{riskyellow} E. seleccionar cliente\newline
-			E. solicitar un préstamo\newline
-			E. aprobar un préstamo\newline
-			E. denegar un préstamo\newline       & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                & \cellcolor{riskblue}                                                                                                                                    \\
-			\hline
-			Menor                                & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                  & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
-			E. contactar con gestor\newline
-			E. desbloquear tarjeta del cliente   & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                   \\
-			\hline
+				Despreciable                         & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}           & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                 & \cellcolor{riskblue}                     \\
+				\hline
+			\end{tabularx}
+			\caption{Tabla de Riesgos}
+			\label{tab:risk}
+		\end{table}
+		\vfill
+		\null
+		\vfill
 
-			Despreciable                         & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}           & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                 & \cellcolor{riskblue}                     \\
-			\hline
-		\end{tabularx}
-	\end{adjustwidth}
-\end{table}
+		\fbox{\begin{tabular}{ll}
+				\textcolor{riskblue}{$\blacksquare$}   & Tolerable   \\
+				\textcolor{riskpurple}{$\blacksquare$} & Bajo        \\
+				\textcolor{riskgreen}{$\blacksquare$}  & Medio       \\
+				\textcolor{riskyellow}{$\blacksquare$} & Alto        \\
+				\textcolor{riskred}{$\blacksquare$}    & Intolerable \\
+			\end{tabular}}
+	\end{multicols}
+\end{adjustwidth}
 
-\fbox{\begin{tabular}{ll}
-		\textcolor{riskblue}{$\blacksquare$}   & Tolerable   \\
-		\textcolor{riskpurple}{$\blacksquare$} & Bajo        \\
-		\textcolor{riskgreen}{$\blacksquare$}  & Medio       \\
-		\textcolor{riskyellow}{$\blacksquare$} & Alto        \\
-		\textcolor{riskred}{$\blacksquare$}    & Intolerable \\
-	\end{tabular}}
 
 \subsubsection{Exposición al riesgo}
 
@@ -150,6 +160,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (3-0.3)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 1}
 \end{table}
 
 \begin{table}[H]
@@ -166,6 +177,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & $>$2\%    \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 2}
 \end{table}
 
 \begin{table}[H]
@@ -182,6 +194,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (2-0.2)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 3}
 \end{table}
 
 \begin{table}[H]
@@ -198,6 +211,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & $>$1\%       \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 4}
 \end{table}
 
 \begin{table}[H]
@@ -214,6 +228,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.5-0.05)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 5}
 \end{table}
 
 \begin{table}[H]
@@ -230,6 +245,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.3-0.03)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 6}
 \end{table}
 
 \begin{table}[H]
@@ -246,6 +262,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.2-0.02)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 7}
 \end{table}
 
 \begin{table}[H]
@@ -262,6 +279,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.1-0.01)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 8}
 \end{table}
 
 \begin{table}[H]
@@ -278,6 +296,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.03-0.0003)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 9}
 \end{table}
 
 \begin{table}[H]
@@ -296,6 +315,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.02-0.0002)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 10}
 \end{table}
 
 \begin{table}[H]
@@ -313,6 +333,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.04-0.0004)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 11}
 \end{table}
 
 \begin{table}[H]
@@ -329,6 +350,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.0002-0.000002)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 12}
 \end{table}
 
 \begin{table}[H]
@@ -345,6 +367,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.0004-0.00004)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 13}
 \end{table}
 
 \begin{table}[H]
@@ -361,6 +384,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (0.0005-0.00005)\% \\
 		\hline
 	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 14}
 \end{table}
 
 A partir del listado anterior de los riesgos se decide qué riesgos se van a tratar, que serán

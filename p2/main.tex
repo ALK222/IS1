@@ -2,6 +2,14 @@
 \usepackage[a4paper, margin=1in, headheight=14pt]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    unicode=true, % Use non-Latin characters in Acrobat's bookmark
+    pdffitwindow=false, % window fit to page when opened
+    colorlinks=false, % Gives color to the links
+    bookmarks=true,
+    linktoc=all
+}
 \usepackage{tabularx}
 \usepackage{graphicx}
 \usepackage{float}
@@ -10,7 +18,7 @@
 \usepackage{setspace}
 \usepackage{anyfontsize}
 \usepackage[toc,page]{appendix} % Remove toc,page to render wo appendix
-\usepackage{hyperref}
+
 \usepackage{nameref}
 \usepackage{datetime}
 \usepackage[table]{xcolor}
@@ -18,9 +26,14 @@
 \usepackage{changepage}
 \usepackage{longtable}
 \usepackage{makecell}
+\usepackage{multicol}
 \usepackage{amssymb}
+\usepackage{chngcntr} % counterwithin
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+\usepackage{enumerate}
 % New Commands
-\newcommand{\nombredelproyecto}{Tienda de ropa}
+\newcommand{\nombredelproyecto}{Banco Chupi Guay (nombre provisional inspirado por los controles de FAL)}
 
 \setcounter{secnumdepth}{4}
 \makeatletter
@@ -95,22 +108,21 @@ Rodrigo Souto Santos
 \newpage
 \tableofcontents
 \newpage
-\input{tex_files/introduccion.tex}
+\input{tex_files/1.introduccion.tex}
 \newpage
-\input{tex_files/est_proy.tex}
+\input{tex_files/2.est_proy.tex}
 \newpage
-\input{tex_files/est_gestion.tex}
+\input{tex_files/3.est_gestion.tex}
 \newpage
-\input{tex_files/plan_temp.tex}
+\input{tex_files/4.plan_temp.tex}
 \newpage
-\input{tex_files/recursos.tex}
+\input{tex_files/5.recursos.tex}
 \newpage
-\input{tex_files/recursos.tex}
+\input{tex_files/6.org_pers.tex}
 \newpage
-\input{tex_files/org_pers.tex}
-\newpage
-\input{tex_files/mec_seg.tex}
+\input{tex_files/7.mec_seg.tex}
 \newpage
 \printglossary[title=Apendice A. Glosario]
-
+\newpage
+\listof{table}{Apendice B. Cuadros}
 \end{document}
