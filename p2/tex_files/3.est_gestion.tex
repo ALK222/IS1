@@ -1,86 +1,89 @@
 \section{Estrategia de gestión de riesgo}
-En este apartado vamos a tratar la gestión de riesgo de un banco online, la cual consiste en tratar todos los posibles riesgos que pueden darse y cómo tratarlos de la mejor manera posible incluso antes de que sucedan,  se va a utilizar una estrategia de gestión proactiva es decir, anticiparse a los problemas o crisis que pueden suceder para minimizar los problemas.
+En este apartado vamos a tratar la gestión de riesgo de un banco online, la cual consiste en tratar todos los posibles riesgos que pueden darse y cómo tratarlos de la mejor manera posible incluso antes de que sucedan,  se va a utilizar una estrategia de gestión proactiva es decir, anticiparse a los problemas o crisis que pueden suceder para minimizar los problemas.\\
+Para analizar los riesgos vamos a tratar todos los casos de uso que nos han tocado.
 
 \subsection{Introducción: Estudio de los riesgos}
 A continuación vamos a indicar todos los posibles riesgos que pueden ocurrir y por cada uno de ellos, indicaremos la frecuencia con la que pueden darse, la descripción de dicho riesgo, la severidad o cuánto de grave es ese problema para el banco y sus consecuencias.
 Para ello vamos a utilizar una tabla SQAS-SEI.
 \begin{table}[H]
-	\begin{adjustwidth}{-2cm}{-2cm}
-		\centering
-		\small
-		\begin{tabularx}{1.2\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{3cm}|X|}
-			\hline
-			\rowcolor{gray}
-			Riesgo                                  & Frecuencia & Descripción                                                                                                                                          & Severidad    & Consecuencias                                                                                                                                                                                                                                     \\
-			\hline
-			Error al iniciar sesión                 & Frecuente  & El usuario no puede iniciar sesión                                                                                                                   & Serio        & Al no poder iniciar sesión, no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                            \\
-			\hline
-			Error al cerrar sesión                  & Frecuente  & El usuario no puede cerrar sesión                                                                                                                    & Despreciable & No es un problema grave ya que aunque no puede cerrar sesión, no afecta a nada ya que dicho cliente puede realizar todo tipo de acción dentro del banco.                                                                                          \\
-			\hline
-			Error al crear una cuenta al cliente    & Probable   & El gestor no puede crear una cuenta al cliente                                                                                                       & Menor        & Es similar al no iniciar sesión ya que no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                 \\
-			\hline
-			Error al eliminar una cuenta al cliente & Ocasional  & El gestor no puede eliminar la cuenta de un cliente                                                                                                  & Menor        & Es algo más importante que no poder cerrar sesión ya que un banco se lleva un porcentaje mientras seas de ese banco, con lo que no poder eliminar tu cuenta afecta directamente al saldo del cliente el cual quiere darse de baja de dicho banco. \\
-			\hline
-			Error al seleccionar un cliente         & Probable   & El gestor no puede acceder a un cliente para modificar sus datos en la \gls{bd}                                                                      & Serio        & Imposibilita al gestor modificar tus datos o actualizarlos con lo cual es algo serio ya que el cliente siempre quiere tener sus datos actualizados cuanto antes y no tener errores en sus cuentas.                                                \\
-			\hline
-
-			Error al cargar tarjeta del cliente     & Remoto     & El cliente no puede cargar su tarjeta de débito con el dinero que posee en su cuenta bancaria, lo cual suponemos que ha sido por un error del banco. & Crítico      & Es un problema crítico casi catastrófico, estamos hablando de un dinero que le pertenece con lo que no poder acceder a su dinero afectaría muy negativamente a la confianza de la persona con el banco.                                           \\
-			\hline
-		\end{tabularx}
-	\end{adjustwidth}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{2.1cm}|X|}
+		\hline
+		\rowcolor{gray}
+		Riesgo                                  & Frecuencia & Descripción                                                                     & Severidad    & Consecuencias                                                                                                                                                                                                                                     \\
+		\hline
+		Error al iniciar sesión                 & Frecuente  & El usuario no puede iniciar sesión                                              & Serio        & Al no poder iniciar sesión, no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                            \\
+		\hline
+		Error al cerrar sesión                  & Frecuente  & El usuario no puede cerrar sesión                                               & Despreciable & No es un problema grave ya que aunque no puede cerrar sesión, no afecta a nada ya que dicho cliente puede realizar todo tipo de acción dentro del banco.                                                                                          \\
+		\hline
+		Error al crear una cuenta al cliente    & Probable   & El gestor no puede crear una cuenta al cliente                                  & Menor        & Es similar al no iniciar sesión ya que no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                 \\
+		\hline
+		Error al eliminar una cuenta al cliente & Ocasional  & El gestor no puede eliminar la cuenta de un cliente                             & Menor        & Es algo más importante que no poder cerrar sesión ya que un banco se lleva un porcentaje mientras seas de ese banco, con lo que no poder eliminar tu cuenta afecta directamente al saldo del cliente el cual quiere darse de baja de dicho banco. \\
+		\hline
+		Error al seleccionar un cliente         & Probable   & El gestor no puede acceder a un cliente para modificar sus datos en la \gls{bd} & Serio        & Imposibilita al gestor modificar tus datos o actualizarlos con lo cual es algo serio ya que el cliente siempre quiere tener sus datos actualizados cuanto antes y no tener errores en sus cuentas.                                                \\
+		\hline
+	\end{tabularx}
 	\caption{Tabla SQA-SEI 1}
 \end{table}
 
 
 \begin{table}[H]
-	\begin{adjustwidth}{-2cm}{-2cm}
-		\centering
-		\small
-		\begin{tabularx}{1.2\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{3cm}|X|}
-			\hline
-			Error al descargar la tarjeta del cliente   & Remoto     & El cliente no puede descargar su tarjeta débito con el dinero que posee en su tarjeta                  & Menor        & No es algo muy grave, ya que puedes seguir utilizando el dinero que tienes en la tarjeta y no habría problemas mayores.                                                                                                                                                                             \\
-			\hline
-			Error al contactar con un gestor            & Remoto     & El cliente no es capaz de contactar con el gestor a través de la página de contacto diseñada para ello & Menor        & Las consecuencias no son demasiado relevantes, sin embargo, puede tener un problema importante y si no contacta con un gestor puede agravarse aún más, aparte de que el cliente perderá su confianza con el banco.                                                                                  \\
-			\hline
-			Error al cambiar el pin de la tarjeta       & Improbable & El gestor no puede cambiar el pin de la tarjeta de un cliente                                          & Menor        & No supone un problema tan grave ya que simplemente puede seguir usando la tarjeta de forma normal sin cambiar de pin ya que suponemos que conoce su pin anterior, en el caso de que lo quiera cambiar porque se haya olvidado puede preguntar al banco cuál era su pin, sin necesidad de cambiarlo. \\
-			\hline
-			Error al bloquear la tarjeta del cliente    & Ocasional  & El cliente no puede bloquear su tarjeta                                                                & Crítico      & El cliente no puede bloquear su tarjeta, y si suponemos que se la han robado es aún peor ya que este cliente no estará contento debido a que su tarjeta no pudo bloquearla y generará una gran desconfianza y una mala reputación hacia el banco.                                                   \\
-			\hline
-			Error al desbloquear la tarjeta del cliente & Remoto     & El cliente no puede desbloquear su tarjeta                                                             & Menor        & La única consecuencia relevante es que dicho cliente no podrá usar su tarjeta, lo cual no es nada positivo y es similar al caso de no poder sacar dinero.                                                                                                                                           \\
-			\hline
-			Error al ingresar nómina en cuenta          & Remoto     & El cliente no puede ingresar su nómina en su cuenta personal                                           & Crítico      & Un cliente siempre quiere tener fiabilidad con su banco, y que haya errores a la hora de ingresar la nómina es algo bastante crítico para la confianza de las personas con el banco.                                                                                                                \\
-			\hline
-			Error al cambiar el titular de la tarjeta   & Ocasional  & El gestor no puede cambiar el titular de una cuenta                                                    & Despreciable & No afecta en nada al transcurso del dinero en sí con lo cual no es un problema grave ni prioritario.                                                                                                                                                                                                \\
-			\hline
-			Error al realizar una transferencia         & Remoto     & El cliente tiene errores al intentar realizar una transferencia nacional/ internacional                & Catastrófico & Es un problema súper grave ya que puede que haya pérdida dinero si hay fallos en las transferencias, y muchas veces las transferencias implican gran cantidad de dinero con lo que afecta a otro negocios y dificulta la economía.                                                                  \\
-			\hline
-		\end{tabularx}
-	\end{adjustwidth}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{2.1cm}|X|}
+		\hline
+		Error al cargar tarjeta del cliente         & Remoto     & El cliente no puede cargar su tarjeta de débito con el dinero que posee en su cuenta bancaria, lo cual suponemos que ha sido por un error del banco. & Crítico & Es un problema crítico casi catastrófico, estamos hablando de un dinero que le pertenece con lo que no poder acceder a su dinero afectaría muy negativamente a la confianza de la persona con el banco.                                                                                             \\
+		\hline
+		Error al descargar la tarjeta del cliente   & Remoto     & El cliente no puede descargar su tarjeta débito con el dinero que posee en su tarjeta                                                                & Menor   & No es algo muy grave, ya que puedes seguir utilizando el dinero que tienes en la tarjeta y no habría problemas mayores.                                                                                                                                                                             \\
+		\hline
+		Error al contactar con un gestor            & Remoto     & El cliente no es capaz de contactar con el gestor a través de la página de contacto diseñada para ello                                               & Menor   & Las consecuencias no son demasiado relevantes, sin embargo, puede tener un problema importante y si no contacta con un gestor puede agravarse aún más, aparte de que el cliente perderá su confianza con el banco.                                                                                  \\
+		\hline
+		Error al cambiar el pin de la tarjeta       & Improbable & El gestor no puede cambiar el pin de la tarjeta de un cliente                                                                                        & Menor   & No supone un problema tan grave ya que simplemente puede seguir usando la tarjeta de forma normal sin cambiar de pin ya que suponemos que conoce su pin anterior, en el caso de que lo quiera cambiar porque se haya olvidado puede preguntar al banco cuál era su pin, sin necesidad de cambiarlo. \\
+		\hline
+		Error al bloquear la tarjeta del cliente    & Ocasional  & El cliente no puede bloquear su tarjeta                                                                                                              & Crítico & El cliente no puede bloquear su tarjeta, y si suponemos que se la han robado es aún peor ya que este cliente no estará contento debido a que su tarjeta no pudo bloquearla y generará una gran desconfianza y una mala reputación hacia el banco.                                                   \\
+		\hline
+		Error al desbloquear la tarjeta del cliente & Remoto     & El cliente no puede desbloquear su tarjeta                                                                                                           & Menor   & La única consecuencia relevante es que dicho cliente no podrá usar su tarjeta, lo cual no es nada positivo y es similar al caso de no poder sacar dinero.                                                                                                                                           \\
+		\hline
+	\end{tabularx}
 	\caption{Tabla SQA-SEI 2}
 \end{table}
 
 \begin{table}[H]
-	\begin{adjustwidth}{-2cm}{-2cm}
-		\centering
-		\small
-		\begin{tabularx}{1.2\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{3cm}|X|}
-			\hline
-			Error al cambiar tu clave de seguridad                                                                                                                                               & Ocasional  & El gestor no puede cambiar la clave de seguridad de la tarjeta del cliente                                                                                                                                                                       & Menor        & Al no cambiar la clave de seguridad suponemos que sí puede bloquearla con lo que, por ejemplo si se la han robado bloquea la tarjeta no podrán usarla sencillamente, por lo que no es un problema crítico                                                                                                                          \\
-			\hline
-			Error al solicitar un préstamo\newline
-			---------\newline
-			Error al aprobar un préstamo\newline
-			---------\newline
-			Error al denegar un préstamo                                                                                                                                                         & Probable   & El cliente no puede solicitar un préstamo,
-			estamos suponiendo que no es problema del cliente sino fallo en el sistema de banco al no poder aprobar un préstamo, con lo cual estos tres casos de uso son prácticamente idénticos & Serio      & Muchos clientes solicitan préstamos y es algo bastante común en los bancos, que cuya principal fuente de ingresos de estos es el interés que reciben de los préstamos con lo que que haya fallos en un proceso tan importante es bastante serio.                                                                                                                                                                                                                                                                                                                                                     \\
-			\hline
-			Error al comprar acciones por parte del cliente                                                                                                                                      & Improbable & El cliente no puede comprar acciones debido a un fallo en el sistema del banco                                                                                                                                                                   & Crítico      & Comprar y vender acciones es algo súper común que mueve muchísimo dinero y prácticamente con lo que se mueven muchísimas empresas grandes, no es algo catastrófico ya que al poder comprar acciones el cliente no pierde dinero, pero tampoco lo gana, con lo que perderá mucha credibilidad en el banco en estos temas si fallan. \\
-			\hline
-			Error al vender acciones por parte del cliente                                                                                                                                       & Improbable & El cliente no puede vender acciones debido a un fallo en el sistema del banco                                                                                                                                                                    & Catastrófico & No poder vender acciones es un problema muy gordo, como he dicho antes, se mueve mucho dinero en la bolsa y al no poder vender acciones, el cliente puede perder mucho dinero por un fallo del banco, esto generaría una desconfianza brutal en todos los aspectos del banco.                                                      \\
-			\hline
-		\end{tabularx}
-	\end{adjustwidth}
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{2.1cm}|X|}
+		\hline
+		Error al ingresar nómina en cuenta                                                                                                                                                   & Probable  & El cliente no puede ingresar su nómina en su cuenta personal                                                                                                                                                                                     & Crítico      & Un cliente siempre quiere tener fiabilidad con su banco, y que haya errores a la hora de ingresar la nómina es algo bastante crítico para la confianza de las personas con el banco.                                               \\
+		\hline
+		Error al cambiar el titular de la tarjeta                                                                                                                                            & Ocasional & El gestor no puede cambiar el titular de una cuenta                                                                                                                                                                                              & Despreciable & No afecta en nada al transcurso del dinero en sí con lo cual no es un problema grave ni prioritario.                                                                                                                               \\
+		\hline
+		Error al realizar una transferencia                                                                                                                                                  & Remoto    & El cliente tiene errores al intentar realizar una transferencia nacional/ internacional                                                                                                                                                          & Catastrófico & Es un problema súper grave ya que puede que haya pérdida dinero si hay fallos en las transferencias, y muchas veces las transferencias implican gran cantidad de dinero con lo que afecta a otro negocios y dificulta la economía. \\
+		\hline
+		Error al cambiar tu clave de seguridad                                                                                                                                               & Ocasional & El gestor no puede cambiar la clave de seguridad de la tarjeta del cliente                                                                                                                                                                       & Menor        & Al no cambiar la clave de seguridad suponemos que sí puede bloquearla con lo que, por ejemplo si se la han robado bloquea la tarjeta no podrán usarla sencillamente, por lo que no es un problema crítico                          \\
+		\hline
+		Error al solicitar un préstamo\newline
+		---------\newline
+		Error al aprobar un préstamo\newline
+		---------\newline
+		Error al denegar un préstamo                                                                                                                                                         & Probable  & El cliente no puede solicitar un préstamo,
+		estamos suponiendo que no es problema del cliente sino fallo en el sistema de banco al no poder aprobar un préstamo, con lo cual estos tres casos de uso son prácticamente idénticos & Serio     & Muchos clientes solicitan préstamos y es algo bastante común en los bancos, que cuya principal fuente de ingresos de estos es el interés que reciben de los préstamos con lo que que haya fallos en un proceso tan importante es bastante serio.                                                                                                                                                                                                                                                     \\
+		\hline
+	\end{tabularx}
 	\caption{Tabla SQA-SEI 3}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{2.1cm}|X|}
+		\hline
+		Error al comprar acciones por parte del cliente & Improbable & El cliente no puede comprar acciones debido a un fallo en el sistema del banco & Crítico      & Comprar y vender acciones es algo súper común que mueve muchísimo dinero y prácticamente con lo que se mueven muchísimas empresas grandes, no es algo catastrófico ya que al poder comprar acciones el cliente no pierde dinero, pero tampoco lo gana, con lo que perderá mucha credibilidad en el banco en estos temas si fallan. \\
+		\hline
+		Error al vender acciones por parte del cliente  & Probable   & El cliente no puede vender acciones debido a un fallo en el sistema del banco  & Catastrófico & No poder vender acciones es un problema muy gordo, como he dicho antes, se mueve mucho dinero en la bolsa y al no poder vender acciones, el cliente puede perder mucho dinero por un fallo del banco, esto generaría una desconfianza brutal en todos los aspectos del banco.                                                      \\
+		\hline
+	\end{tabularx}
+	\caption{Tabla SQA-SEI 4}
 \end{table}
 \newpage
 \subsection{Priorización de riesgos del proyecto}
@@ -101,24 +104,23 @@ Los niveles de riesgo son:
 			\centering
 			\begin{tabularx}{0.7\textwidth}{|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|X|}
 				\hline
-				Relación de Probabilidad y Severidad & Frecuente                                         & Probable                                              & Ocasional                                             & Remoto                                               & Improbable                               \\
+				Relación de Probabilidad y Severidad & Frecuente                                         & Probable                                                                          & Ocasional                                             & Remoto                                                                       & Improbable                                \\
 				\hline
-				Catastrófico                         & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskred}E. bloquear tarjeta del cliente    & \cellcolor{riskyellow} E. realizar una transferencia & \cellcolor{riskgreen} E. vender acciones \\
+				Catastrófico                         & \cellcolor{riskred}                               & \cellcolor{riskred}   E. bloquear tarjeta del cliente \newline E. vender acciones & \cellcolor{riskred}                                   & \cellcolor{riskyellow} E. realizar una transferencia                         & \cellcolor{riskgreen} E. vender acciones  \\
 				\hline
-				Crítico                              & \cellcolor{riskred}                               & \cellcolor{riskred}                                   & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline
-				E. ingresar nómina en cuenta         & \cellcolor{riskpurple}E. comprar acciones                                                                                                                                                                                                                           \\
+				Crítico                              & \cellcolor{riskred}                               & \cellcolor{riskred}                                                               & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline	E. ingresar nómina en cuenta & \cellcolor{riskpurple}E. comprar acciones \\
 				\hline
 				Serio                                & \cellcolor{riskyellow}                            & \cellcolor{riskyellow} E. seleccionar cliente\newline
 				E. solicitar un préstamo\newline
 				E. aprobar un préstamo\newline
-				E. denegar un préstamo\newline       & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                & \cellcolor{riskblue}                                                                                                                                    \\
+				E. denegar un préstamo\newline       & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                                            & \cellcolor{riskblue}                                                                                                                                                             \\
 				\hline
-				Menor                                & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                  & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
+				Menor                                & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                                              & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
 				E. contactar con gestor\newline
-				E. desbloquear tarjeta del cliente   & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                   \\
+				E. desbloquear tarjeta del cliente   & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                                                                        \\
 				\hline
 
-				Despreciable                         & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}           & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                 & \cellcolor{riskblue}                     \\
+				Despreciable                         & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}                                       & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                                         & \cellcolor{riskblue}                      \\
 				\hline
 			\end{tabularx}
 			\caption{Tabla de Riesgos}
@@ -148,6 +150,25 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
 		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al seleccionar cliente \newline
+		Error al vender acciones\newline
+		Error al bloquear la tarjeta del cliente}
+		\\
+		\hline
+		Probabilidad    & Probable  \\
+		\hline
+		Consecuencia    & Serio     \\
+		\hline
+		Nivel de riesgo & (5-0.5)\% \\
+		\hline
+	\end{tabularx}
+	\caption{Tabla de nivel de riesgo 1}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\begin{tabularx}{0.6\textwidth}{|X|X|}
+		\hline
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al seleccionar cliente \newline
 		Error al solicitar un préstamo \newline
 		Error al aprobar un préstamo \newline
 		Error al denegar un préstamo}
@@ -160,7 +181,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (3-0.3)\% \\
 		\hline
 	\end{tabularx}
-	\caption{Tabla de nivel de riesgo 1}
+	\caption{Tabla de nivel de riesgo 2}
 \end{table}
 
 \begin{table}[H]
@@ -177,7 +198,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & $>$2\%    \\
 		\hline
 	\end{tabularx}
-	\caption{Tabla de nivel de riesgo 2}
+	\caption{Tabla de nivel de riesgo 3}
 \end{table}
 
 \begin{table}[H]
@@ -194,7 +215,7 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & (2-0.2)\% \\
 		\hline
 	\end{tabularx}
-	\caption{Tabla de nivel de riesgo 3}
+	\caption{Tabla de nivel de riesgo 4}
 \end{table}
 
 \begin{table}[H]
@@ -211,25 +232,9 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 		Nivel de riesgo & $>$1\%       \\
 		\hline
 	\end{tabularx}
-	\caption{Tabla de nivel de riesgo 4}
-\end{table}
-
-\begin{table}[H]
-	\centering
-	\begin{tabularx}{0.6\textwidth}{|X|X|}
-		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al bloquear la tarjeta del cliente}
-		\\
-		\hline
-		Probabilidad    & Ocasional    \\
-		\hline
-		Consecuencia    & Catastrófico \\
-		\hline
-		Nivel de riesgo & (0.5-0.05)\% \\
-		\hline
-	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 5}
 \end{table}
+
 
 \begin{table}[H]
 	\centering
@@ -370,54 +375,28 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\caption{Tabla de nivel de riesgo 13}
 \end{table}
 
-\begin{table}[H]
-	\centering
-	\begin{tabularx}{0.6\textwidth}{|X|X|}
-		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al vender acciones}
-		\\
-		\hline
-		Probabilidad    & Improbable         \\
-		\hline
-		Consecuencia    & Catastrófico       \\
-		\hline
-		Nivel de riesgo & (0.0005-0.00005)\% \\
-		\hline
-	\end{tabularx}
-	\caption{Tabla de nivel de riesgo 14}
-\end{table}
 
 A partir del listado anterior de los riesgos se decide qué riesgos se van a tratar, que serán
 aquellos que tengan una mayor exposición. El resto de riesgos son asumidos dado la baja
 probabilidad de que ocurran.
 
 \subsection{Plan de gestión de riesgo: Reducción, supervisión y gestión de riesgo}
-\subsubsection{Reducción}
+A continuación vamos a realizar el plan de gestión de los 2 casos de más exposición del anterior apartado (el resto de los casos son similares en muchos de los puntos), que consiste en tratar 3 puntos para cada uno, la reducción del riesgo en para que no suceda, la supervisión del mismo para comprobar si ha sucedido o no y su plan de contingencia en caso de que dicho riesgo se haya producido.\\
+Como he dicho antes todos los casos se pueden resolver de una manera similar con lo que vamos a exponer los dos ejemplos de mayor exposición al riesgo.
+\subsection{Riesgo 1: error al vender acciones}
+\textbf{Reducción\_1:} La manera de reducir los riesgos está directamente implicada con el sistema informático ya que estamos tratando con un banco online, con lo cual toda la posible reducción de riesgos solo es posible en el terreno de la programación, esto se podría aplicar al resto de los casos también, se podría resolver mejorando todo el ámbito informático, contratando a muy buenos programadores y buenos equipos de trabajo.\\
+También con el objetivo de que el problema no sea agrave mucho, solucionar los pequeños errores y darles importancia para que no se produzca un caos total, en este caso si vemos que sólo una persona de cien ha tenido problemas al vender acciones, aunque sea una persona, es probable que más personas se pueden ver afectadas más tarde, con lo que lo lógico sería solucionar dicho problema por pequeño que sea cuanto antes.
 
-La manera de reducir los riesgos está directamente implicado con el sistema informático ya que estamos tratando con un banco online, con lo cual toda la posible reducción de riesgos solo es posible en el terreno de la programación, así que englobo todos los riesgos aquí para no ser repetitivo en que es necesario que el soporte informático sea excelente para minimizar todos los riesgos posibles que se puedan llevar a cabo.
+\textbf{Supervisión\_1:} Para saber si este riesgo ha sucedido podríamos saberlo de varias formas, que el ordenador detecte que hay ciertos errores al intentar vender acciones o que sea la propia persona la que pueda hacer un reporte del error, en definitiva se debería mejorar la infraestructura de la empresa para que haya métodos más efectivos a la hora de detectar errores y poder resolverlos con mucha más eficacia, y aunque no haya habido errores revisar todo el código para poder prever errores futuros.
 
-Está claro que hay riesgos más importantes que otros que deberían tener mayor importancia a la hora de resolverse como por ejemplo el error al realizar una transferencia o error al vender acciones y otros que no son muy importantes que tampoco afectan tan gravemente a la empresa como error al cerrar sesión u error al no poder desbloquear la tarjeta de un cliente, los cuales deberían evitarse pero no son catastróficos.
+\textbf{Plan de contingencia\_1:} Una vez ha tenido lugar este error, una de las cosas más efectivas que podríamos hacer sería tener una copia de seguridad de todo, pongámonos en el caso de que al vender acciones no recibe el dinero de dichas acciones debido a un error, con lo que al cliente le saldría que ha vendido esas acciones pero no ha recibido nada a cambio, se puede solucionar mediante una copia de seguridad en todo momento, ya que el objetivo principal es que el cliente no se vea afectado y en segundo lugar se hace una copia para volver al estado anterior del cliente para que nadie más de la empresa se vea afectado tampoco.
 
-En resumen la reducción de los problemas de esta empresa depende del ámbito informático con lo que sería súper aconsejable emplear una gran cantidad de dinero a su soporte, contratando a muy buenos programadores que se encarguen de él, buenos equipos informáticos para los trabajadores, buen mantenimiento del sistema y por supuesto excelente conexión a la red. Sería ideal que todo lo que esté relacionado con este sector sea compatible con la empresa además de seguro y de buena calidad.
 
-\subsubsection{Supervisión}
+\subsubsection{Riesgo 2: error al bloquear la tarjeta del cliente}
+\textbf{Reducción\_2:} Al igual que en el caso anterior, la gestión de la reducción de un riesgo se podría subsanar mediante una buena infraestructura informática y de esta manera evitar problemas de programación lo cual se puede resolver empleando gran cantidad de dinero a su soporte, tanto un buen mantenimiento del sistema y por supuesto un gran trato a los trabajadores (lo cual es imprescindible en una empresa) para que se sientan cómodos y puedan realizar su trabajo con mayor comodidad y eficacia.
 
-La supervisión de todos estos riesgos es esencial para el mantenimiento de la empresa e ir viendo si los problemas siguen sucediendo o como se están llevando a cabo.
+\textbf{Supervisión\_2:} A la hora de supervisar el correcto funcionamiento de esta función, se deberá tener un buen plan de supervisión, como por ejemplo, una rápida respuesta del servidor y un buen sistema de detección de fallos con lo que es fácil saber si algo falla rápidamente ya que el ordenador nos indica si ha habido un problema que no se ha podido resolver o si hay errores e irregularidades en las cuentas de los clientes(en este caso, por ejemplo, mucho gasto de dinero porque les han robado la tarjeta y se están gastando el dinero de nuestro cliente) y también serán ellos mismos los que nos informen de ciertos problemas ya que les afecta directamente.\\
+Lógicamente cada función del banco deberá ser supervisada de manera frecuente por los programadores aunque no hayan dado fallos para ver si es posible arreglar un problema que aún no ha ocurrido.
 
-Como he dicho todos los riesgos se mueven en el plano informático con lo que a la hora de ponernos a supervisar dichos riesgos, es fácil saber si algo falla rápidamente ya que el ordenador nos indica si ha habido un problema que no se ha podido resolver o si hay errores e irregularidades en las cuentas de los clientes.
-
-Las maneras de comprobar que el riesgo ha sucedido en todos los casos lo sabremos en el momento ya que depende de si funciona o no dicha gestión.
-
-Es importante ir adelantando y arreglando posibles problemas en casos menores cuanto antes para que el problema no se agrave con casos mucho más complejos, es decir, si vemos que una cosa falla, por mínima que sea, se intentará reducir su riesgo lo antes posible y para ello debemos tener un buen plan de supervisión, como por ejemplo, una rápida respuesta del servidor y un buen sistema de detección de fallos para que nuestros programadores puedan ir a solucionarlos cuanto antes.
-
-\subsubsection{Plan de contingencia}
-
-El plan de contingencia consiste básicamente en qué hacer una vez ha sucedido ese problema tanto por una razón informática o porque no se ha visto venir ese problema lo cual es improbable ya que esto lo estamos haciendo para no dejar algún problema nos pille por sorpresa.
-
-En el caso de este apartado puede haber varios casos según el error, si ha sido un error suave, que afecta levemente al banco y no entorpece su gestión o grave, que al tener lugar ese error pueden haber consecuencias más importantes tanto a nivel monetario del cliente y del banco como a nivel de confianza con esta entidad hacia sus usuarios.
-
-Ya englobamos la severidad e importancia de cada uno de ellos con lo que vamos a pasar a saber que hacer una vez han sucedido.
-
-Al ser un error suave que no afecta a grandes rasgos a una empresa por ejemplo error al iniciar sesión o al cerrar sesión, a pesar de que siguen siendo problemas, no son críticos con lo que el resto de cosas puede seguir su funcionamiento con total normalidad y se informará a los encargados de este problema a que lo solucionen a la mayor brevedad posible, en el caso de los errores graves como error al realizar una transferencia o error al no poder ingresar la nómina, no poder vender o comprar acciones, son problemas ya bastante serios que afectan directamente al sistema monetario de los clientes, con lo que una vez tienen lugar este tipo de problemas, lo mejor es tener copias de seguridad de todo por si falla y volver al estado anterior sin que el cliente se vea afectado y una vez resuelta la consecuencia pasar a arreglar el problema comunicandoselo a los programadores para que puedan encargarse rápida y eficazmente de ello.
-
-En resumen, lo que queremos a la encarar un problema tan grave es que en todo momento el cliente mantenga sus cuentas seguras y una vez no haya peligro de pérdida pasar a resolver dicho problema cuanto antes, si estamos ante un problema menor simplemente comunicarlo y esperar a que el sistema nos diga en dónde está el fallo exactamente para agilizar todo el proceso de contingencia y continuar la gestión del banco sin problema.
+\textbf{Plan de contingencia\_3:} En el caso de que este error de a lugar, lo primero que se deberá conseguir es resolver el problema cuanto antes y de una manera rápida, mientras tanto, pongámonos en el caso de que a este cliente le han robado la tarjeta y se están gastando su dinero, pues mientras se intenta solucionar el problema, hay métodos en los bancos en los cuales no puedes sacar una gran cantidad de dinero de golpe y si ése es el caso, se consulta con el dueño de la tarjeta para ver si está de acuerdo, con lo que aunque le roben,  el gasto al menos será mínimo, y por supuesto todo gasto perdido aunque sea pequeño, lo subsanará el banco ya que el error es del mismo y a un cliente hay que garantizarle confianza y estabilidad.
+Con estos pasos, se reducirá al mínimo el problema, y una vez esté solucionado mejorar dicha función y supervisarla para que no vuelva a ocurrir.

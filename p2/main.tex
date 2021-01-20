@@ -1,5 +1,5 @@
 \documentclass[12pt]{article}
-\usepackage[a4paper, margin=1in, headheight=14pt]{geometry}
+\usepackage[a4paper, margin=0.8in, headheight=14pt]{geometry}
 \usepackage[utf8]{inputenc}
 \usepackage[spanish]{babel}
 \usepackage{hyperref}
@@ -33,7 +33,7 @@
 \counterwithin{table}{section}
 \usepackage{enumerate}
 % New Commands
-\newcommand{\nombredelproyecto}{Banco Chupi Guay (nombre provisional inspirado por los controles de FAL)}
+\newcommand{\nombredelproyecto}{Banco}
 
 \setcounter{secnumdepth}{4}
 \makeatletter
@@ -124,5 +124,6 @@ Rodrigo Souto Santos
 \newpage
 \printglossary[title=Apendice A. Glosario]
 \newpage
-\listof{table}{Apendice B. Cuadros}
+\addcontentsline{toc}{chapter}{Apendice B. Índice de cuadros}
+\listof{table}{Apendice B. Índice de cuadros}
 \end{document}
