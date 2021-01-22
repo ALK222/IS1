@@ -3,7 +3,7 @@ En este apartado vamos a tratar la gestión de riesgo de un banco online, la cua
 Para analizar los riesgos vamos a tratar todos los casos de uso que nos han tocado.
 
 \subsection{Introducción: Estudio de los riesgos}
-A continuación vamos a indicar todos los posibles riesgos que pueden ocurrir y por cada uno de ellos, indicaremos la frecuencia con la que pueden darse, la descripción de dicho riesgo, la severidad o cuánto de grave es ese problema para el banco y sus consecuencias.
+A continuación vamos a indicar todos los posibles riesgos que pueden ocurrir y por cada uno de ellos, indicaremos la frecuencia con la que pueden darse, la descripción de dicho riesgo, la severidad o cuánto de grave es ese problema para el banco y sus \textbf{Consecuencia}s.
 Para ello vamos a utilizar una tabla SQAS-SEI.
 \begin{table}[H]
 	\centering
@@ -11,17 +11,17 @@ Para ello vamos a utilizar una tabla SQAS-SEI.
 	\begin{tabularx}{\textwidth}{|>{\columncolor[gray]{0.8}}p{3cm}|p{1.9cm}|p{3cm}|p{2.1cm}|X|}
 		\hline
 		\rowcolor{gray}
-		Riesgo                                  & Frecuencia & Descripción                                                                     & Severidad    & Consecuencias                                                                                                                                                                                                                                     \\
+		\textbf{Riesgo}                         & \textbf{Frecuencia} & \textbf{Descripción}                                                            & \textbf{Severidad} & \textbf{\textbf{Consecuencia}s}                                                                                                                                                                                                                   \\
 		\hline
-		Error al iniciar sesión                 & Frecuente  & El usuario no puede iniciar sesión                                              & Serio        & Al no poder iniciar sesión, no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                            \\
+		Error al iniciar sesión                 & Frecuente           & El usuario no puede iniciar sesión                                              & Serio              & Al no poder iniciar sesión, no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                            \\
 		\hline
-		Error al cerrar sesión                  & Frecuente  & El usuario no puede cerrar sesión                                               & Despreciable & No es un problema grave ya que aunque no puede cerrar sesión, no afecta a nada ya que dicho cliente puede realizar todo tipo de acción dentro del banco.                                                                                          \\
+		Error al cerrar sesión                  & Frecuente           & El usuario no puede cerrar sesión                                               & Despreciable       & No es un problema grave ya que aunque no puede cerrar sesión, no afecta a nada ya que dicho cliente puede realizar todo tipo de acción dentro del banco.                                                                                          \\
 		\hline
-		Error al crear una cuenta al cliente    & Probable   & El gestor no puede crear una cuenta al cliente                                  & Menor        & Es similar al no iniciar sesión ya que no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                 \\
+		Error al crear una cuenta al cliente    & Probable            & El gestor no puede crear una cuenta al cliente                                  & Menor              & Es similar al no iniciar sesión ya que no puede realizar ningún tipo de acción dentro del banco..                                                                                                                                                 \\
 		\hline
-		Error al eliminar una cuenta al cliente & Ocasional  & El gestor no puede eliminar la cuenta de un cliente                             & Menor        & Es algo más importante que no poder cerrar sesión ya que un banco se lleva un porcentaje mientras seas de ese banco, con lo que no poder eliminar tu cuenta afecta directamente al saldo del cliente el cual quiere darse de baja de dicho banco. \\
+		Error al eliminar una cuenta al cliente & Ocasional           & El gestor no puede eliminar la cuenta de un cliente                             & Menor              & Es algo más importante que no poder cerrar sesión ya que un banco se lleva un porcentaje mientras seas de ese banco, con lo que no poder eliminar tu cuenta afecta directamente al saldo del cliente el cual quiere darse de baja de dicho banco. \\
 		\hline
-		Error al seleccionar un cliente         & Probable   & El gestor no puede acceder a un cliente para modificar sus datos en la \gls{bd} & Serio        & Imposibilita al gestor modificar tus datos o actualizarlos con lo cual es algo serio ya que el cliente siempre quiere tener sus datos actualizados cuanto antes y no tener errores en sus cuentas.                                                \\
+		Error al seleccionar un cliente         & Probable            & El gestor no puede acceder a un cliente para modificar sus datos en la \gls{bd} & Serio              & Imposibilita al gestor modificar tus datos o actualizarlos con lo cual es algo serio ya que el cliente siempre quiere tener sus datos actualizados cuanto antes y no tener errores en sus cuentas.                                                \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla SQA-SEI 1}
@@ -37,13 +37,13 @@ Para ello vamos a utilizar una tabla SQAS-SEI.
 		\hline
 		Error al descargar la tarjeta del cliente   & Remoto     & El cliente no puede descargar su tarjeta débito con el dinero que posee en su tarjeta                                                                & Menor   & No es algo muy grave, ya que puedes seguir utilizando el dinero que tienes en la tarjeta y no habría problemas mayores.                                                                                                                                                                             \\
 		\hline
-		Error al contactar con un gestor            & Remoto     & El cliente no es capaz de contactar con el gestor a través de la página de contacto diseñada para ello                                               & Menor   & Las consecuencias no son demasiado relevantes, sin embargo, puede tener un problema importante y si no contacta con un gestor puede agravarse aún más, aparte de que el cliente perderá su confianza con el banco.                                                                                  \\
+		Error al contactar con un gestor            & Remoto     & El cliente no es capaz de contactar con el gestor a través de la página de contacto diseñada para ello                                               & Menor   & Las \textbf{Consecuencia}s no son demasiado relevantes, sin embargo, puede tener un problema importante y si no contacta con un gestor puede agravarse aún más, aparte de que el cliente perderá su confianza con el banco.                                                                         \\
 		\hline
 		Error al cambiar el pin de la tarjeta       & Improbable & El gestor no puede cambiar el pin de la tarjeta de un cliente                                                                                        & Menor   & No supone un problema tan grave ya que simplemente puede seguir usando la tarjeta de forma normal sin cambiar de pin ya que suponemos que conoce su pin anterior, en el caso de que lo quiera cambiar porque se haya olvidado puede preguntar al banco cuál era su pin, sin necesidad de cambiarlo. \\
 		\hline
 		Error al bloquear la tarjeta del cliente    & Ocasional  & El cliente no puede bloquear su tarjeta                                                                                                              & Crítico & El cliente no puede bloquear su tarjeta, y si suponemos que se la han robado es aún peor ya que este cliente no estará contento debido a que su tarjeta no pudo bloquearla y generará una gran desconfianza y una mala reputación hacia el banco.                                                   \\
 		\hline
-		Error al desbloquear la tarjeta del cliente & Remoto     & El cliente no puede desbloquear su tarjeta                                                                                                           & Menor   & La única consecuencia relevante es que dicho cliente no podrá usar su tarjeta, lo cual no es nada positivo y es similar al caso de no poder sacar dinero.                                                                                                                                           \\
+		Error al desbloquear la tarjeta del cliente & Remoto     & El cliente no puede desbloquear su tarjeta                                                                                                           & Menor   & La única \textbf{Consecuencia} relevante es que dicho cliente no podrá usar su tarjeta, lo cual no es nada positivo y es similar al caso de no poder sacar dinero.                                                                                                                                  \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla SQA-SEI 2}
@@ -104,23 +104,23 @@ Los niveles de riesgo son:
 			\centering
 			\begin{tabularx}{0.7\textwidth}{|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|>{\centering}X|X|}
 				\hline
-				Relación de Probabilidad y Severidad & Frecuente                                         & Probable                                                                          & Ocasional                                             & Remoto                                                                       & Improbable                                \\
+				\textbf{Relación de \textbf{Probabilidad} y Severidad} & Frecuente                                         & Probable                                                                          & Ocasional                                             & Remoto                                                                       & Improbable                                \\
 				\hline
-				Catastrófico                         & \cellcolor{riskred}                               & \cellcolor{riskred}   E. bloquear tarjeta del cliente \newline E. vender acciones & \cellcolor{riskred}                                   & \cellcolor{riskyellow} E. realizar una transferencia                         & \cellcolor{riskgreen} E. vender acciones  \\
+				Catastrófico                                           & \cellcolor{riskred}                               & \cellcolor{riskred}   E. bloquear tarjeta del cliente \newline E. vender acciones & \cellcolor{riskred}                                   & \cellcolor{riskyellow} E. realizar una transferencia                         & \cellcolor{riskgreen} E. vender acciones  \\
 				\hline
-				Crítico                              & \cellcolor{riskred}                               & \cellcolor{riskred}                                                               & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline	E. ingresar nómina en cuenta & \cellcolor{riskpurple}E. comprar acciones \\
+				Crítico                                                & \cellcolor{riskred}                               & \cellcolor{riskred}                                                               & \cellcolor{riskyellow}                                & \cellcolor{riskgreen} E. cargar tarjeta \newline	E. ingresar nómina en cuenta & \cellcolor{riskpurple}E. comprar acciones \\
 				\hline
-				Serio                                & \cellcolor{riskyellow}                            & \cellcolor{riskyellow} E. seleccionar cliente\newline
+				Serio                                                  & \cellcolor{riskyellow}                            & \cellcolor{riskyellow} E. seleccionar cliente\newline
 				E. solicitar un préstamo\newline
 				E. aprobar un préstamo\newline
-				E. denegar un préstamo\newline       & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                                            & \cellcolor{riskblue}                                                                                                                                                             \\
+				E. denegar un préstamo\newline                         & \cellcolor{riskgreen} E. eliminar cuenta          & \cellcolor{riskpurple}                                                            & \cellcolor{riskblue}                                                                                                                                                             \\
 				\hline
-				Menor                                & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                                              & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
+				Menor                                                  & \cellcolor{riskgreen} E. iniciar sesión           & \cellcolor{riskgreen}E. crear cuenta                                              & \cellcolor{riskpurple}E. cambiar clave de seguridad   & \cellcolor{riskblue} E. descargar tarjeta\newline
 				E. contactar con gestor\newline
-				E. desbloquear tarjeta del cliente   & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                                                                        \\
+				E. desbloquear tarjeta del cliente                     & \cellcolor{riskblue} E. cambiar pin de la tarjeta                                                                                                                                                                                                                                                                        \\
 				\hline
 
-				Despreciable                         & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}                                       & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                                         & \cellcolor{riskblue}                      \\
+				Despreciable                                           & \cellcolor{riskgreen} E. cerrar sesión            & \cellcolor{riskpurple} \cellcolor{riskblue}                                       & \cellcolor{riskblue} E. cambiar titular de la tarjeta & \cellcolor{riskblue}                                                         & \cellcolor{riskblue}                      \\
 				\hline
 			\end{tabularx}
 			\caption{Tabla de Riesgos}
@@ -149,16 +149,16 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al seleccionar cliente \newline
-		Error al vender acciones\newline
-		Error al bloquear la tarjeta del cliente}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al seleccionar cliente \newline
+			Error al vender acciones\newline
+			Error al bloquear la tarjeta del cliente}}
 		\\
 		\hline
-		Probabilidad    & Probable  \\
+		\textbf{Probabilidad}    & Probable  \\
 		\hline
-		Consecuencia    & Serio     \\
+		\textbf{Consecuencia}    & Serio     \\
 		\hline
-		Nivel de riesgo & (5-0.5)\% \\
+		\textbf{Nivel de riesgo} & (5-0.5)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 1}
@@ -168,17 +168,17 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al seleccionar cliente \newline
-		Error al solicitar un préstamo \newline
-		Error al aprobar un préstamo \newline
-		Error al denegar un préstamo}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al seleccionar cliente \newline
+			Error al solicitar un préstamo \newline
+			Error al aprobar un préstamo \newline
+			Error al denegar un préstamo}}
 		\\
 		\hline
-		Probabilidad    & Probable  \\
+		\textbf{Probabilidad}    & Probable  \\
 		\hline
-		Consecuencia    & Serio     \\
+		\textbf{Consecuencia}    & Serio     \\
 		\hline
-		Nivel de riesgo & (3-0.3)\% \\
+		\textbf{Nivel de riesgo} & (3-0.3)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 2}
@@ -188,14 +188,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al iniciar sesión}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al iniciar sesión}}
 		\\
 		\hline
-		Probabilidad    & Frecuente \\
+		\textbf{Probabilidad}    & Frecuente \\
 		\hline
-		Consecuencia    & Menor     \\
+		\textbf{Consecuencia}    & Menor     \\
 		\hline
-		Nivel de riesgo & $>$2\%    \\
+		\textbf{Nivel de riesgo} & $>$2\%    \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 3}
@@ -205,14 +205,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al crear cuenta}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al crear cuenta}}
 		\\
 		\hline
-		Probabilidad    & Probable  \\
+		\textbf{Probabilidad}    & Probable  \\
 		\hline
-		Consecuencia    & Menor     \\
+		\textbf{Consecuencia}    & Menor     \\
 		\hline
-		Nivel de riesgo & (2-0.2)\% \\
+		\textbf{Nivel de riesgo} & (2-0.2)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 4}
@@ -222,14 +222,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al cerrar sesión}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al cerrar sesión}}
 		\\
 		\hline
-		Probabilidad    & Frecuente    \\
+		\textbf{Probabilidad}    & Frecuente    \\
 		\hline
-		Consecuencia    & Despreciable \\
+		\textbf{Consecuencia}    & Despreciable \\
 		\hline
-		Nivel de riesgo & $>$1\%       \\
+		\textbf{Nivel de riesgo} & $>$1\%       \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 5}
@@ -240,14 +240,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al eliminar cuenta}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al eliminar cuenta}}
 		\\
 		\hline
-		Probabilidad    & Ocasional    \\
+		\textbf{Probabilidad}    & Ocasional    \\
 		\hline
-		Consecuencia    & Serio        \\
+		\textbf{Consecuencia}    & Serio        \\
 		\hline
-		Nivel de riesgo & (0.3-0.03)\% \\
+		\textbf{Nivel de riesgo} & (0.3-0.03)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 6}
@@ -257,14 +257,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al cambiar clave de seguridad}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al cambiar clave de seguridad}}
 		\\
 		\hline
-		Probabilidad    & Ocasional    \\
+		\textbf{Probabilidad}    & Ocasional    \\
 		\hline
-		Consecuencia    & Menor        \\
+		\textbf{Consecuencia}    & Menor        \\
 		\hline
-		Nivel de riesgo & (0.2-0.02)\% \\
+		\textbf{Nivel de riesgo} & (0.2-0.02)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 7}
@@ -274,14 +274,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al cambiar titular de la tarjeta}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al cambiar titular de la tarjeta}}
 		\\
 		\hline
-		Probabilidad    & Ocasional    \\
+		\textbf{Probabilidad}    & Ocasional    \\
 		\hline
-		Consecuencia    & Despreciable \\
+		\textbf{Consecuencia}    & Despreciable \\
 		\hline
-		Nivel de riesgo & (0.1-0.01)\% \\
+		\textbf{Nivel de riesgo} & (0.1-0.01)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 8}
@@ -291,14 +291,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al realizar una transferencia}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al realizar una transferencia}}
 		\\
 		\hline
-		Probabilidad    & Remoto          \\
+		\textbf{Probabilidad}    & Remoto          \\
 		\hline
-		Consecuencia    & Serio           \\
+		\textbf{Consecuencia}    & Serio           \\
 		\hline
-		Nivel de riesgo & (0.03-0.0003)\% \\
+		\textbf{Nivel de riesgo} & (0.03-0.0003)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 9}
@@ -308,16 +308,16 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al descargar tarjeta \newline
-		Error al contactar con gestor \newline
-		Error al desbloquear tarjeta del cliente}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al descargar tarjeta \newline
+			Error al contactar con gestor \newline
+			Error al desbloquear tarjeta del cliente}}
 		\\
 		\hline
-		Probabilidad    & Remoto          \\
+		\textbf{Probabilidad}    & Remoto          \\
 		\hline
-		Consecuencia    & Menor           \\
+		\textbf{Consecuencia}    & Menor           \\
 		\hline
-		Nivel de riesgo & (0.02-0.0002)\% \\
+		\textbf{Nivel de riesgo} & (0.02-0.0002)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 10}
@@ -327,15 +327,15 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al cargar tarjeta \newline
-		Error al ingresar nómina en cuenta}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al cargar tarjeta \newline
+			Error al ingresar nómina en cuenta}}
 		\\
 		\hline
-		Probabilidad    & Remoto          \\
+		\textbf{Probabilidad}    & Remoto          \\
 		\hline
-		Consecuencia    & Crítico         \\
+		\textbf{Consecuencia}    & Crítico         \\
 		\hline
-		Nivel de riesgo & (0.04-0.0004)\% \\
+		\textbf{Nivel de riesgo} & (0.04-0.0004)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 11}
@@ -345,14 +345,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al cambiar pin de la tarjeta}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al cambiar pin de la tarjeta}}
 		\\
 		\hline
-		Probabilidad    & Improbable          \\
+		\textbf{Probabilidad}    & Improbable          \\
 		\hline
-		Consecuencia    & Menor               \\
+		\textbf{Consecuencia}    & Menor               \\
 		\hline
-		Nivel de riesgo & (0.0002-0.000002)\% \\
+		\textbf{Nivel de riesgo} & (0.0002-0.000002)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 12}
@@ -362,14 +362,14 @@ Ahora ordenaremos los riesgos de mayor a menor prioridad según la exposición a
 	\centering
 	\begin{tabularx}{0.6\textwidth}{|X|X|}
 		\hline
-		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{Error al comprar acciones}
+		\multicolumn{2}{|>{\hsize=\dimexpr2\hsize+2\tabcolsep+\arrayrulewidth\relax}X|}{\textbf{Error al comprar acciones}}
 		\\
 		\hline
-		Probabilidad    & Improbable         \\
+		\textbf{Probabilidad}    & Improbable         \\
 		\hline
-		Consecuencia    & Crítico            \\
+		\textbf{Consecuencia}    & Crítico            \\
 		\hline
-		Nivel de riesgo & (0.0004-0.00004)\% \\
+		\textbf{Nivel de riesgo} & (0.0004-0.00004)\% \\
 		\hline
 	\end{tabularx}
 	\caption{Tabla de nivel de riesgo 13}
