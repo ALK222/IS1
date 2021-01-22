@@ -18,7 +18,7 @@
 \usepackage{setspace}
 \usepackage{anyfontsize}
 \usepackage[toc,page]{appendix} % Remove toc,page to render wo appendix
-
+\usepackage{multirow}
 \usepackage{nameref}
 \usepackage{datetime}
 \usepackage[table]{xcolor}
@@ -31,6 +31,7 @@
 \usepackage{chngcntr} % counterwithin
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
+\usepackage{pdflscape}
 \usepackage{enumerate}
 % New Commands
 \newcommand{\nombredelproyecto}{Banco}
@@ -89,19 +90,31 @@ Rodrigo Souto Santos
 \section*{Control de cambios} %
 \noindent\begin{tabularx}{\textwidth}{ |l|l|p{5cm}|X| }
 	\hline
-	\textbf{Versión} & \textbf{Fecha} & \textbf{Autores}     & \textbf{Descripción}                                \\
+	\textbf{Versión}       & \textbf{Fecha}                                                                   & \textbf{Autores}              & \textbf{Descripción}                                                            \\
 	\hline
-	0.1              & 15/12/2020     & Alejandro Barrachina & Inicio del PDP y comienzo del apartado introducción \\
+	0.1                    & 15/12/2020                                                                       & Alejandro Barrachina          & Inicio del PDP y comienzo del apartado introducción                             \\
 	\hline
-	                 &                &                      &                                                     \\
+	0.2                    & 30/12/2020                                                                       & David Cantador                & Apartado de estimación de proyecto hecho                                        \\
 	\hline
-	                 &                &                      &                                                     \\
+	0.3                    & 1/1/2021                                                                         & Samuel Rodríguez              & Apartado de mecanismos de seguimiento hecho                                     \\
 	\hline
-	                 &                &                      &                                                     \\
+	0.4                    & 0/4/2021                                                                         & Rodrigo Souto                 & Apartado de organización del personal hecho                                     \\
 	\hline
-	                 &                &                      &                                                     \\
+	0.5                    & 3/1/2021                                                                         & Sergio Sánchez                & Apartado de estrategias de gestión hecho                                        \\
 	\hline
-	                 &                &                      &                                                     \\
+	0.5.1                  & 5/1/2021                                                                         & Alejandro Barrachina          & Correcciones del apartado introductorio y arreglos en maquetación del documento \\
+	\hline
+	0.6                    & 12/1/2021                                                                        & Rodrigo Sosa                  & Apartado de recursos de proyecto hecho                                          \\
+	\hline
+	0.6.1                  & 15/1/2021                                                                        & Alejandro Barrachina \newline
+	Rodrigo Sosa \newline
+	David Cantador \newline
+	Rodrigo Souto \newline & Correcciones varias                                                                                                                                                                                \\
+	\hline
+	0.7                    & 20/1/2021                                                                        & Juan Femenía                  & Tabla del apartado 4.1 hecha                                                    \\
+	\hline
+	0.8                    & 22/01/2021                                                                       & David Llanes \newline
+	Alejandro Barrachina   & Diagrama de Gantt, diagrama en red, tabla de uso de recursos y maquetación final                                                                                                                   \\
 	\hline
 \end{tabularx}
 
@@ -124,6 +137,6 @@ Rodrigo Souto Santos
 \newpage
 \printglossary[title=Apendice A. Glosario]
 \newpage
-\addcontentsline{toc}{chapter}{Apendice B. Índice de cuadros}
+\addcontentsline{toc}{section}{Apendice B. Índice de cuadros}
 \listof{table}{Apendice B. Índice de cuadros}
 \end{document}
