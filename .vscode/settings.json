@@ -1,0 +1,51 @@
+{
+    "spellright.language": [
+        "en",
+        "es"
+    ],
+    "spellright.documentTypes": [
+        "markdown",
+        "plaintext",
+        "tex",
+        "latex"
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "pdflatex, makeglossaries, pdflatex (2x)",
+            "tools": [
+                "xelatex",
+                "makeglossaries",
+                "xelatex",
+                "xelatex"
+            ]
+        },
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "xelatex",
+            "command": "xelatex",
+            "args": [
+                "-file-line-error",
+                "-interaction=nonstopmode",
+                "-f",
+                "%DOC%"
+            ],
+            "env": {}
+        },
+        {
+            "name": "pdflatex",
+            "command": "pdflatex",
+            "args": [
+                "-f",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "makeglossaries",
+            "command": "makeglossaries",
+            "args": [
+                "%DOCFILE%"
+            ]
+        }
+    ]
+}
