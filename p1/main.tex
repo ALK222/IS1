@@ -13,6 +13,10 @@
 \usepackage{hyperref}
 \usepackage{nameref}
 \usepackage{datetime}
+\usepackage{tikz}
+\usepackage[11pt]{moresize}
+\usetikzlibrary{calc}
+\newcommand\HRule{\rule{\textwidth}{1pt}}
 
 \setabbreviationstyle[acronym]{short-long}
 
@@ -45,21 +49,48 @@ Rodrigo Souto Santos
 
 \begin{document}
 \begin{titlepage}
+	\begin{tikzpicture}[remember picture, overlay]
+		\draw[line width = 2pt] ($(current page.north west) + (0.5in,-0.5in)$) rectangle ($(current page.south east) + (-0.5in,0.5in)$);
+	\end{tikzpicture}
+
 	\makeatletter
-	{
-		\centering
-		\vspace*{4cm}
-		{\fontsize{40pt}{40pt}\scshape\textbf{\@title}\par}
+	\centering
+	\vspace*{6\baselineskip}
+
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
 
 
-		{\Huge Especificación de Requisitos de Software\par}
+	{\HUGE \underbar{\nombredelproyecto}\par} % Title
 
-		\vspace*{1cm}
-		{\Large\itshape
-			\@author
-			\par}
-	}
-	\vfill
+	%------------------------------------------------
+	%	Subtitle
+	%------------------------------------------------
+
+	Especificación de Requisitos de Software% Subtitle or further description
+
+	\vspace*{3\baselineskip} % Whitespace under the subtitle
+
+	%------------------------------------------------
+	%	Editor(s)
+	%------------------------------------------------
+
+
+	\vspace{0.5\baselineskip} % Whitespace before the editors
+	\begin{flushright}
+		\small\@author\\ % Editor list
+	\end{flushright}
+
+
+	\vspace{0.5\baselineskip} % Whitespace below the editor list
+
+
+	\vfill % Whitespace between editor names and publisher logo
+
+	\vspace{0.3\baselineskip} % Whitespace under the publisher logo
+
+	2020 % Publication year
 	\makeatother
 \end{titlepage}
 \newpage
