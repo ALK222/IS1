@@ -1,10 +1,15 @@
 \section{introducción}
 \subsection{Propósito}
-Es un proyecto dirigido a la administración de forma online de una tienda de ropa. Se trata de un programa que permitirá la interacción online entre la tienda y los clientes, proporcionándoles la posibilidad de realizar la compra o reserva de productos entre otras cosas, así como la disponibilidad de diversos descuentos y promociones.
-Además permitirá a la tienda de ropa gestionar sus productos.
+El objetivo de este \gls{srs} es describir de manera clara y concisa las funciones y restricciones que tendrá el software aquí descrito.\\
+Este documento se dirige al equipo encargado de desarrollar el software de dicho programa, al de mantenerlo y a las personas que participen en el mismo de cualquier manera.
 \subsection{Alcance}
-El producto abarca todas las necesidades que puede llegar a tener una tienda de ropa. La aplicación almacenará en la \gls{bd} los diferentes usuarios que se registren (tanto clientes, administradores como empleados), con sus datos correspondientes.
-Permitirá a los administradores gestionar los productos en stock así como los descuentos y promociones. El cliente por otro lado, podrá realizar pedidos, notificar desperfectos en los productos recibidos así como realizar la devolución de los mismos y utilizar los descuentos disponibles.
+El programa se denomina ``Tienda de ropa''.
+
+En el mundo moderno, es importante tener presencia en internet para poder competir con otras plataformas, en ocasiones más asequibles. Para ello, este software pretende ofrecer a las tiendas sin soporte online una transición simple e indolora al mundo online.
+
+``Tienda de ropa'' será un sistema de gestión de usuarios, pedidos y empleados con una interfaz web. En este sistema tendrán que estar registrados los productos, los empleados y los usuarios para poder gestionarlas.\\
+Este sistema facilitará la gestión de usuarios para la empresa, la gestión de pedidos y productos para los empleados y la gestión de los pedidos por parte de los mismos clientes.
+
 
 \glsaddall
 \nocite{*}
@@ -12,7 +17,7 @@ Permitirá a los administradores gestionar los productos en stock así como los 
     \printglossary[title=Definiciones\, acrónimos y abreviaturas, numberedsection]}
 
 \bibliographystyle{ieeetr}
-\bibliography{references}
+\bibliography{references.bib}
 \subsection{Resumen}
 El siguiente documento se va a estructurar en diferentes apartados, de la siguiente manera: Apartado \ref{sec:desc_gen}~(\nameref{sec:desc_gen}) donde se comentará la perspectiva general del producto y las funciones del mismo. También se explicará sus restricciones, supuestos y dependencias y los posibles requisitos futuros así como las características del usuario.
 En el \ref{sec:req_esp}~(\nameref{sec:req_esp}) se comentarán las interfaces externas, los requisitos funcionales y de rendimiento. También aparecerán los requisitos sobre la persistencia de datos, restricciones del diseño , los atributos del sistema software y un resumen de las tecnologías empleadas para su correcto funcionamiento.
