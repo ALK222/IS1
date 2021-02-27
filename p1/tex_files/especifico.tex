@@ -14,14 +14,56 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
 \end{figure}
 \newpage
 \paragraph{Alta cliente}
-El usuario introduce su nombre usuario y contraseñas deseados en el sistema. Tras introducir los datos el sistema determina si ya existe dicho usuario. Si el nombre de usuario ya existe en la \gls{bd}, se informa de que dicho nombre no es valido. Si el nombre de usuario no se encuentra en la \gls{bd}, se procede a guardar los datos en la \gls{bd} y se informará al usuario del éxito de la operación.
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.7\textwidth}{|X|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Alta cliente}                                                                                                                       \\
+        \hline
+        \textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de alta.                                                                              \\
+        \hline
+        \textbf{Actores}          & Cliente                                                                                                                                     \\
+        \hline
+        \textbf{Precondición}     & Inexistente                                                                                                                                 \\
+        \hline
+        \textbf{Secuencia normal} & 1. El usuario selecciona la opción ``registrarse''. \newline
+        2. Introducir usuario y contraseña.                                                                                                                                     \\
+        \hline
+        \textbf{Postcondición}    & El cliente queda dado de alta (registrado) y se muestra por pantalla el mensaje ``Usuario añadido''.                                        \\
+        \hline
+        \textbf{Execpciones}      & Si el usuario que se introduce ya existe en la \gls{bd} aparece por pantalla el mensaje ``Usuario ya existente, por favor introduzca otro'' \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/alta_cliente.png}
+    \includegraphics[width=0.7\textwidth]{Use_Cases/alta_cliente.png}
 \end{figure}
 \newpage
 \paragraph{Baja cliente}
-El usuario solicita al sistema su baja, el administrador comprueba en la \gls{bd} si el usuario existe. En caso de ser encontrado, se borrarán sus datos de la \gls{bd}. En caso contrario, se informará al usuario de que no ha sido encontrado en la \gls{bd}
+\begin{table}[H]
+    \centering
+    \begin{tabularx}{0.7\textwidth}{|X|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Baja cliente}                                                                                                                                \\
+        \hline
+        \textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de baja.                                                                                       \\
+        \hline
+        \textbf{Actores}          & Cliente                                                                                                                                              \\
+        \hline
+        \textbf{Precondición}     & El cliente debe estar dado de alta y debe existir                                                                                                    \\
+        \hline
+        \textbf{Secuencia normal} & 1. El cliente introduce sus datos y se loguea. \newline
+        2. El cliente selecciona la opción ``Darse de baja''                                                                                                                             \\
+        \hline
+        \textbf{Postcondición}    & El usuario se eliminará de la \gls{bd} y aparecerá en pantalla el mensaje ``El usuario ha sido borrado correctamente''.
+        \hline
+        \textbf{Execpciones}      & En el caso de que los datos introducidos en la \gls{bd} no coincidan con los existentes se mostrará por pantalla el mensaje ``Usuario inexistente''. \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/baja_cliente.png}
