@@ -33,7 +33,7 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
         \hline
         \textbf{Postcondición}    & El cliente queda dado de alta (registrado) y se muestra por pantalla el mensaje ``Usuario añadido''.                                        \\
         \hline
-        \textbf{Execpciones}      & Si el usuario que se introduce ya existe en la \gls{bd} aparece por pantalla el mensaje ``Usuario ya existente, por favor introduzca otro'' \\
+        \textbf{Excepciones}      & Si el usuario que se introduce ya existe en la \gls{bd} aparece por pantalla el mensaje ``Usuario ya existente, por favor introduzca otro'' \\
         \hline
     \end{tabularx}
 \end{table}
@@ -62,7 +62,7 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
         \hline
         \textbf{Postcondición}    & El usuario se eliminará de la \gls{bd} y aparecerá en pantalla el mensaje ``El usuario ha sido borrado correctamente''.                              \\
         \hline
-        \textbf{Execpciones}      & En el caso de que los datos introducidos en la \gls{bd} no coincidan con los existentes se mostrará por pantalla el mensaje ``Usuario inexistente''. \\
+        \textbf{Excepciones}      & En el caso de que los datos introducidos en la \gls{bd} no coincidan con los existentes se mostrará por pantalla el mensaje ``Usuario inexistente''. \\
         \hline
     \end{tabularx}
 \end{table}
@@ -86,12 +86,12 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
         \hline
         \textbf{Precondición}     & Los datos del usuario deben ser correctos y se le tiene que haber concedido la opción de convertirse en administrador.                                                                                                                                                                                                                              \\
         \hline
-        \textbf{Secuencia normal} & 1. El usuario introduce sus dagtos y se loguea \newline
+        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea \newline
         2. Selecciona la opción ``Obtener permisos de administrador''.                                                                                                                                                                                                                                                                                                                  \\
         \hline
         \textbf{Postcondición}    & El usuario consigue permisos de administrador.                                                                                                                                                                                                                                                                                                      \\
         \hline
-        \textbf{Execpciones}      & Si el usuario introduce datos erróneos aparecerá un mensaje informando al usuario de ello. Si el usuario ya es administrador se mostrará por pantalla el mensaje ``Este usuario ya es administrador''. Si el usuario no tiene permiso para ser administrador se mostrará por pantalla el mensaje ``Usuario no válido para obtener estos permisos''. \\
+        \textbf{Excepciones}      & Si el usuario introduce datos erróneos aparecerá un mensaje informando al usuario de ello. Si el usuario ya es administrador se mostrará por pantalla el mensaje ``Este usuario ya es administrador''. Si el usuario no tiene permiso para ser administrador se mostrará por pantalla el mensaje ``Usuario no válido para obtener estos permisos''. \\
         \hline
     \end{tabularx}
 \end{table}
@@ -115,12 +115,12 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
         \hline
         \textbf{Precondición}     & El usuario debe haberse dado de alta como administrador y existir en la \gls{bd}.                                      \\
         \hline
-        \textbf{Secuencia normal} & 1. El usuario introduce sus dagtos y se loguea \newline
+        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
         2. Selecciona la opción ``Darse de baja como administrador''.                                                                                      \\
         \hline
         \textbf{Postcondición}    & El usuario deja de ser administrador.                                                                                  \\
         \hline
-        \textbf{Execpciones}      & Si al introducir los datos el usuario no existem se informará con el mensaje ``Usuario no encontrado''.                \\
+        \textbf{Excepciones}      & Si al introducir los datos el usuario no existe se informará con el mensaje ``Usuario no encontrado''.                 \\
         \hline
     \end{tabularx}
 \end{table}
@@ -130,21 +130,88 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
 \end{figure}
 \newpage
 \paragraph{Alta empleado}
-Se obtienen los datos del empleado y se buscan en la \gls{bd}. Si no se encuentra el empleado se crea el nuevo usuario y se informa de que ha tenido éxito, si se encuentra ya el usuario registrado se informara con un error.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Alta empleado}                                                                                         \\
+        \hline
+        \textbf{Descripción}      & Se introducen los datos del usuario y se registra como empleado en la \gls{bd}.                                \\
+        \hline
+        \textbf{Actores}          & Empleado                                                                                                       \\
+        \hline
+        \textbf{Precondición}     & El usuario debe tener permiso para convertirse en empleado.                                                    \\
+        \hline
+        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
+        2. Selecciona la opción ``Darse de alta como empleado''.                                                                                   \\
+        \hline
+        \textbf{Postcondición}    & Los datos del empleado se han añadido en la \gls{bd} y se muestra por pantalla ``Empleado añadido con éxito''. \\
+        \hline
+        \textbf{Excepciones}      & Si el empleado ya existe se mostrará por pantalla el mensaje ``Este empleado ya existe''.                      \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Alta_empleado.png}
 \end{figure}
 \newpage
 \paragraph{Baja empleado}
-Se obtienen los datos del empleado y se buscan en la \gls{bd}. Si se encuentra se borrara el usuario y se informará de que la operación tuvo éxito, si el usuario no se encuentra se informará con un error
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Baja empleado}                                                                                                 \\
+        \hline
+        \textbf{Descripción}      & Una vez introducidos los datos, el empleado se da de baja perdiendo sus permisos como tal.                             \\
+        \hline
+        \textbf{Actores}          & Empleado                                                                                                               \\
+        \hline
+        \textbf{Precondición}     & El usuario debe haberse dado de alta como empleado.                                                                    \\
+        \hline
+        \textbf{Secuencia normal} & 1. Se introducen los datos del empleado en la \gls{bd}. \newline
+        2. Selecciona la opción ``Dar de baja como empleado''.                                                                                             \\
+        \hline
+        \textbf{Postcondición}    & Los datos del empleado se borran de la \gls{bd} y se muestra por pantalla ``Empleado dado de baja con éxito''.         \\
+        \hline
+        \textbf{Excepciones}      & Si los datos del empleado no coinciden con los existentes se muestra por pantalla el mensaje ``Empleado inexistente''. \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Baja empleado.png}
 \end{figure}
 \newpage
 \paragraph{Sancionar cliente}
-Se comprueba si el aviso es una infracción de las normas, si es el cliente es un infractor reincidente en la \gls{bd}, si lo es se incrementa la magnitud de la sanción, sino se actualiza en la \gls{bd} y se sanciona, por otro lado si no es una infracción no se hace nada.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Sancionar cliente}                                                                                            \\
+        \hline
+        \textbf{Descripción}      & Se sanciona a un cliente, en caso de ser reincidente, se agrava su sanción.                                           \\
+        \hline
+        \textbf{Actores}          & Administrad / Empleado                                                                                                \\
+        \hline
+        \textbf{Precondición}     & El cliente debe existir.                                                                                              \\
+        \hline
+        \textbf{Secuencia normal} & 1. EL usuario (empleado o administrador) introduce sus datos y se loguea. \newline
+        2. Selecciona la opción ``Sancionar cliente''.\newline
+        3. Introduce los datos del cliente en cuestión y lo sanciona de manera grave o leve.                                                              \\
+        \hline
+        \textbf{Postcondición}    & La sanción al cliente se guarda en la \gls{bd}.                                                                       \\
+        \hline
+        \textbf{Excepciones}      & Si El cliente no ha cometido ninguna infracción la sanción no tendrá consecuencias y se informará de ello al usuario. \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/Sancionar Cliente.png}
