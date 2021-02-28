@@ -16,7 +16,8 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
 \paragraph{Alta cliente}
 \begin{table}[H]
     \centering
-    \begin{tabularx}{0.7\textwidth}{|X|X|}
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
         \hline
         \rowcolor{lightgray}
         \textbf{Nombre del caso}  & \textbf{Alta cliente}                                                                                                                       \\
@@ -38,13 +39,14 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
 \end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{Use_Cases/alta_cliente.png}
+    \includegraphics[width=0.8\textwidth]{Use_Cases/alta_cliente.png}
 \end{figure}
 \newpage
 \paragraph{Baja cliente}
 \begin{table}[H]
     \centering
-    \begin{tabularx}{0.7\textwidth}{|X|X|}
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
         \hline
         \rowcolor{lightgray}
         \textbf{Nombre del caso}  & \textbf{Baja cliente}                                                                                                                                \\
@@ -70,14 +72,58 @@ Se añadirá una salida por aplicación web que será el portal donde el usuario
 \end{figure}
 \newpage
 \paragraph{Añadir Administrador}
-Se solicita el usuario sus datos, un nombre de usuario y una contraseña. Si los datos coinciden se procede a buscar los datos del administrador en la \gls{bd}. En caso contrario, se informa de que los datos aportados no son válidos. Al buscar en la \gls{bd}, si el usuario no existe, se creará y se le darán permisos de administrador. En caso de ya existir, se avisará de ello.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Alta administrador}                                                                                                                                                                                                                                                                                                                         \\
+        \hline
+        \textbf{Descripción}      & El usuario introduce sus datos y, si no existen ya, se guardarán en la \gls{bd} y se le darán permisos de administrador.                                                                                                                                                                                                                            \\
+        \hline
+        \textbf{Actores}          & Administrador                                                                                                                                                                                                                                                                                                                                       \\
+        \hline
+        \textbf{Precondición}     & Los datos del usuario deben ser correctos y se le tiene que haber concedido la opción de convertirse en administrador.                                                                                                                                                                                                                              \\
+        \hline
+        \textbf{Secuencia normal} & 1. El usuario introduce sus dagtos y se loguea \newline
+        2. Selecciona la opción ``Obtener permisos de administrador''.                                                                                                                                                                                                                                                                                                                  \\
+        \hline
+        \textbf{Postcondición}    & El usuario consigue permisos de administrador.                                                                                                                                                                                                                                                                                                      \\
+        \hline
+        \textbf{Execpciones}      & Si el usuario introduce datos erróneos aparecerá un mensaje informando al usuario de ello. Si el usuario ya es administrador se mostrará por pantalla el mensaje ``Este usuario ya es administrador''. Si el usuario no tiene permiso para ser administrador se mostrará por pantalla el mensaje ``Usuario no válido para obtener estos permisos''. \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/alta_admin.png}
+    \includegraphics[width=0.65\textwidth]{Use_Cases/alta_admin.png}
 \end{figure}
 \newpage
 \paragraph{Baja administrador}
-Se obtienen los datos del administrador y se buscan en la \gls{bd}. Si se encuentran se le quitarán permisos y se borrará el usuario, al terminar se informará del éxito de la operación. Por el contrario, si no se encuentra el usuario, se informa  de que se ha producido un error.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Baja administrador}                                                                                            \\
+        \hline
+        \textbf{Descripción}      & El usuario introduce sus datos y, si existen , se le dará de baja como administrador, perdiendo sus permisos como tal. \\
+        \hline
+        \textbf{Actores}          & Administrador                                                                                                          \\
+        \hline
+        \textbf{Precondición}     & El usuario debe haberse dado de alta como administrador y existir en la \gls{bd}.                                      \\
+        \hline
+        \textbf{Secuencia normal} & 1. El usuario introduce sus dagtos y se loguea \newline
+        2. Selecciona la opción ``Darse de baja como administrador''.                                                                                      \\
+        \hline
+        \textbf{Postcondición}    & El usuario deja de ser administrador.                                                                                  \\
+        \hline
+        \textbf{Execpciones}      & Si al introducir los datos el usuario no existem se informará con el mensaje ``Usuario no encontrado''.                \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/baja_admin.png}
