@@ -440,4 +440,10 @@ Las operaciones de modificación de datos serán accesibles desde un mismo sitio
 \subsection{Restricciones de diseño}
 El servidor sólo estaría disponible para ordenadores con Windows y Linux dado que este no cuenta con soporte para dispositivos Android ni dispositivos de la marca Apple.
 \subsection{Atributos del sistema software}
-La aplicación será software libre. Presentará una alta mantenibilidad sin perder fiabilidad para permitir que, en un futuro, más gente pueda contribuir al proyecto de manera sencilla y menos problemática.
+La funcionalidad del programa estará acorde a los casos de uso en todo momento.
+\begin{itemize}
+    \item\textbf{Fiabilidad:} el programa asegurará que los pedidos se hagan de manera correcta. En caso de haber algún problema se podrá contactar con empleados y administradores.
+    \item\textbf{Disponibilidad:} los usuarios podrán acceder en todo momento a las funcionalidades del sistema ya que la base de datos estará en un servidor dedicado. Solo se hará inaccesible cuando haya mantenimiento o actualizaciones del sistema.
+    \item\textbf{Seguridad:} los datos de clientes, empleados y administradores estarán encriptados para poder asegurarlos frente a ataques externos. Toda la transferencia de datos se hará por protocolo \gls{https} para evitar fugas de datos.
+    \item\textbf{Mantenibilidad:} durante el desarrollo del sistema se hará una buena documentación para que el personal que entre al proyecto pueda entender el código y su funcionalidad sin demasiada dificultad. También se hará uso de sistemas de control de versiones como git para poder revertir versiones si fuese necesario.
+\end{itemize}
