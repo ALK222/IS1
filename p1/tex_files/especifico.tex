@@ -2,25 +2,25 @@
 \label{sec:req_esp}
 \subsection{Interfaces externos}
 
-El producto consta de diferentes entradas y salida, en el caso de las entradas:
-Destacamos un sistema de identificación de usuarios para poder ofrecer las distintas funcionalidades disponibles para cada tipo de usuario que haya en el sistema. Según sea el usuario de nuevo ingreso o ya existente en la base de datos se le solicitará unos elementos específicos. 
+El producto consta de diferentes entradas y salida, en el caso de las entradas:\\
+Destacamos un sistema de identificación de usuarios para poder ofrecer las distintas funcionalidades disponibles para cada tipo de usuario que haya en el sistema. Según sea el usuario de nuevo ingreso o ya existente en la base de datos se le solicitará unos elementos específicos.
 
 Al nuevo usuario, independientemente de si se trata de un cliente, administrador o empleado: nombre usuario, clave personal(contraseña) y datos personales. Si el usuario ya tiene una cuenta, únicamente le hará falta hacer log in introduciendo nombre usuario y contraseña. Además, el usuario dispondrá de la capacidad de cambiar su nombre identificativo, así como su contraseña, introduciendo los datos actuales del usuario como verificación de identidad y los nuevos datos que se quieran establecer.
 
 En el caso de ser el usuario un administrador o un empleado, podrá sancionar a un cliente introduciendo sus datos.
 
-Destaca un menú que mostrará a los usuarios las principales funcionalidades del sistema disponibles. Las opciones variarán dependiendo de los privilegios que tenga la cuenta identificada en el sistema. En el caso de tratarse de un cliente podrá realizar la reservar, devolución o búsqueda de un producto, añadir un producto al carrito (para realizar la compra) e informar de algún desperfecto tras su compra.
+Destaca un menú que mostrará a los usuarios las principales funcionalidades del sistema disponibles. Las opciones variarán dependiendo de los privilegios que tenga la cuenta identificada en el sistema. En el caso de tratarse de un cliente podrá realizar la reservar, devolución o búsqueda de un producto, añadir un producto al carrito (para realizar la compra) e informar de algún desperfecto tras su compra.\\
 Para todas estas funciones el usuario deberá de haber hecho log in e introducir los datos correspondientes al producto (ID). En el caso de informar de un desperfecto deberá introducir un mensaje explicando el problema. En el caso de tratarse de la compra de un producto, deberá añadir el producto al carrito e introducir su tarjeta de crédito (en el caso de que no la haya ingresado al registrarse).
 
 Los administradores podrán añadir una nueva promoción introduciendo los datos correspondientes, así como eliminar una ya existente. Por otro lado, podrán aplicar un descuento a un producto, así como realizar actualizaciones de stock añadiendo o quitando productos. Para estas funciones será necesario que el administrador haya hecho log in e introduzca el ID del producto sobre el cual realizar los cambios.
 
-Por otro lado, destacamos las salidas:
-En el caso de dar de alta o baja a un usuario, cambiar el nombre o la contraseña de este, se mostrará un mensaje indicando si la operación ha tenido éxito o no y en el caso de no tenerlo, indicará el motivo.
+Por otro lado, destacamos las salidas:\\
+En el caso de dar de alta o baja a un usuario, cambiar el nombre o la contraseña de este, se mostrará un mensaje indicando si la operación ha tenido éxito o no y en el caso de no tenerlo, indicará el motivo.\\
 Con respecto a la reserva, búsqueda de un producto, se informará si la operación ha tenido éxito y en caso de no tenerlo se indicará si el ID del producto introducido no existe o si se trata de otro problema (en el caso de realizar una compra, que la tarjeta introducida no exista o no cuente con el dinero suficiente para realizar el pago).
 
-Búsquedas. Las búsquedas pueden ser realizadas por cualquier usuario. Las búsquedas tendrán lugar a través del modelo especifico, talla, color, etc. El resultado de las búsquedas se mostrará por pantalla con las posibles opciones según los datos introducidos. 
+Búsquedas. Las búsquedas pueden ser realizadas por cualquier usuario. Las búsquedas tendrán lugar a través del modelo especifico, talla, color, etc. El resultado de las búsquedas se mostrará por pantalla con las posibles opciones según los datos introducidos.
 
-Factura tras una compra. La compra de un producto generará un ticket el cual se mostrará en pantalla. También existe la opción de ser enviado por correo electrónico. El ticket se generará con los datos correspondientes a los productos elegidos acompañados del precio. Para ello, se debe estar registrado y haber hecho el log in. 
+Factura tras una compra. La compra de un producto generará un ticket el cual se mostrará en pantalla. También existe la opción de ser enviado por correo electrónico. El ticket se generará con los datos correspondientes a los productos elegidos acompañados del precio. Para ello, se debe estar registrado y haber hecho el log in.
 
 
 \subsection{Requisitos funcionales}
