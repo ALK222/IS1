@@ -445,15 +445,20 @@ Se obtiene el usuario y contraseña del usuario y se comprueban en la \gls{bd}. 
 Las operaciones de modificación de datos serán accesibles desde un mismo sitio físico, aunque en distintas máquinas, por ello la base de datos solo debe ser modificable desde un \gls{host} local. Los datos serán accesibles para lectura desde internet.
 \subsection{Requisitos sobre la persistencia de datos}
 \label{sec:req_pers_dat}
-\noindent\begin{tabularx}{\textwidth}{ l X }
-    % \hline
-    Producto-Cliente               & ``Un cliente no podrá comprar productos mientras esté sancionado"                                                \\
-    Empleado-Producto              & ``El Empleado podrá dar de alta productos"                                                                       \\
-    Empleado-Producto              & ``El Empleado podrá dar de baja productos"                                                                       \\
-    Empleado-Producto              & ``El Empleado podrá modificar los datos de los juegos"                                                           \\
-    Administrador-Producto-Cliente & ``El administrador podrá sancionar al cliente en caso de devolución fraudulenta del producto"                    \\
-    Administrador-Empleado-Cliente & ``El administrador podrá cambiar las credenciales de los clientes y empleados bajo la demanda de dicho usuario'' \\
-\end{tabularx}
+% \noindent\begin{tabularx}{\textwidth}{ l X }
+%     % \hline
+%     Producto-Cliente               & ``Un cliente no podrá comprar productos mientras esté sancionado"                                                \\
+%     Empleado-Producto              & ``El Empleado podrá dar de alta productos"                                                                       \\
+%     Empleado-Producto              & ``El Empleado podrá dar de baja productos"                                                                       \\
+%     Empleado-Producto              & ``El Empleado podrá modificar los datos de los juegos"                                                           \\
+%     Administrador-Producto-Cliente & ``El administrador podrá sancionar al cliente en caso de devolución fraudulenta del producto"                    \\
+%     Administrador-Empleado-Cliente & ``El administrador podrá cambiar las credenciales de los clientes y empleados bajo la demanda de dicho usuario'' \\
+% \end{tabularx}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{images/DiagramaER.png}
+    \caption{Diagrama ER de la base de datos usada en el programa}
+\end{figure}
 \subsection{Restricciones de diseño}
 El servidor sólo estaría disponible para ordenadores con Windows y Linux dado que este no cuenta con soporte para dispositivos Android ni dispositivos de la marca Apple.
 \subsection{Atributos del sistema software}
