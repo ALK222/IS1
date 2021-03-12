@@ -1,20 +1,20 @@
 \section{Descripción General }
 \label{sec:desc_gen}
 \subsection{Perspectiva del producto}
-El proyecto software está ideado para integrarse con todos los productos de la tienda, con los empleados, los clientes y el sistema.\\
+El software de este proyecto está diseñado tanto para integrarse con las tecnologías ya existentes en la tienda, como para ser un producto fácil de usar por cualquier tipo de usuario independientemente de sus conocimientos tecnológicos.
 En un principio el producto estará adaptado para gestionar los trámites de compra entre los clientes y la propia tienda de ropa. También se adaptará para un acceso multiplataforma.
 
 Desde un punto de vista de la adaptación dentro del propio software que usa la tienda de ropa, la aplicación será compatible con cualquier sistema operativo.\\
-Respecto a los backups, se hará los que nos proporcione el propio sistema de la \gls{bd} ya que será un sistema centralizado para cada tienda de ropa.
+Respecto a los backups, se harán los que nos proporcione el propio sistema de la \gls{bd} ya que será un sistema centralizado para cada tienda de ropa.
 \subsection{Funciones del producto}
 \begin{itemize}
-    \item\textbf{Gestión de cliente: }permitirá la creación, eliminación de un cliente, cambiar contraseña, cambiar nombre, Login y Logout, buscar productos y añadirlos al carrito, aplicar descuentos, informar de desperfectos, comprobar el estado del pedido, comprar productos, reservarlos y devolverlos.
-    \item\textbf{Gestión de administrador: }permitirá tanto la creación cómo la eliminación de un administrador, sancionar a un cliente, cambiar contraseña, cambiar nombre, Login y Logout, gestión de inventario cómo actualizar Stock, quitar productos, añadir promociones y quitarlas.
-    \item\textbf{Gestión de empleado: }permitirá la creación, eliminación de un empleado, cambiar contraseña, cambiar nombre, Login y Logout.
+    \item\textbf{Gestión de cliente: }permitirá el alta y baja de un cliente, cambiar contraseña, cambiar nombre, Login y Logout, buscar productos y añadirlos al carrito, aplicar descuentos, informar de desperfectos, comprobar el estado del pedido, comprar productos, reservarlos y devolverlos.
+    \item\textbf{Gestión de administrador: }permitirá tanto el alta como la baja de un administrador, sancionar a un cliente, cambiar contraseña, cambiar nombre, Login y Logout, gestión de inventario cómo actualizar Stock, quitar productos, añadir promociones y quitarlas.
+    \item\textbf{Gestión de empleado: }permitirá el alta y baja de un empleado, cambiar contraseña, cambiar nombre, Login y Logout.
 \end{itemize}
 
 \subsection{Características del usuario}
-El producto estará destinado al administrador de una tienda de ropa que deberá tener unos conocimientos básicos de informática, a nivel de usuario, para el correcto manejo de la herramienta. La aplicación será intuitiva para que no exista ningún problema a la hora de manejarla.\\
+El producto estará destinado al administrador de una tienda de ropa que deberá tener unos conocimientos básicos de informática, a nivel de usuario, para el correcto manejo de la herramienta. La aplicación será intuitiva para que no exista ningún problema a la hora de manejarla. Para mejor entendimiento sobre cómo funciona la \gls{bd}, véase el apartado \ref{sec:req_pers_dat}~(\nameref{sec:req_pers_dat}).
 El cliente solo requerirá de conocimientos básicos de informática para poder acceder a la aplicación y poder navegar hasta los distintos productos y la cesta de la compra.
 
 Este software tiene como objetivo todas las tiendas de ropa existentes, aun así, pensamos
@@ -22,43 +22,30 @@ que aquellas tiendas de tamaño pequeño o medio se beneficiarán más del uso d
 nuestro programa debido a la facilidad de acceso e implementación que ofrece.
 \subsection{Restricciones}
 Primeramente, hay que tener en cuenta un factor muy importante que es la seguridad
-de los datos de los clientes según la Ley Orgánica de Protección de Datos y Garantía de
-los Derechos Digitales aprobada el 23-11-2018.
+de los datos de los clientes según la Ley Orgánica 3/2018, de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales\cite{prot_datos}.
 
-Respecto a las limitaciones de hardware, no son muy elevadas ya que los ordenadores
-usados por estas tiendas de ropa son lo suficientemente potentes como para ejecutar de forma fluida nuestra
-aplicación, dado a que no hace uso de muchos recursos.
+En cuanto a restricciones hardware tendremos de dos tipos:
+\begin{itemize}
+    \item El servidor debe ser lo suficientemente potente como para poder manejar una \gls{bd} y las operaciones que los usuarios hagan sobre la misma.
+    \item Los equipos de los usuarios no requieren de una gran potencia ya que no harán operaciones muy potentes, limitándose casi en su totalidad a renderizar la página.
+\end{itemize}
 
-Las interfaces serán simples ya que este programa será usado por los clientes, empleados y
-administradores de sistema, por lo que debe ser una interfaz clara e intuitiva.
+Una prioridad del proyecto será mantener las interfaces lo más simples posibles para que resulten fáciles de usar para cualquier usuario.
 
-Hay que tener en cuenta que esta aplicación estará instalada en cada uno de los
-terminales y ordenadores de los usuarios en diferentes localizaciones geográficas, pero
-con una base de datos común, de tal forma que habrá que evitar problemas de
-modificación de datos, así como un posible colapso de la base de datos. Véase el apartado \ref{sec:req_pers_dat}~(\nameref{sec:req_pers_dat}).
+Solo habrá una \gls{bd} para evitar problemas con la paridad de datos. Debido a que este software será usado por personas distintas en diferentes localizaciones es importante que no puedan interferir unos con otros y que se puedan hacer operaciones concurrentes sin que ello suponga un problema.
 
-Hay que tener en cuenta que el sistema necesitará estar apagado unas ciertas horas a
-la semana (se intentará que sea cuando afecte al menor número de usuarios) para la
-realización de control y auditoría.
+El sistema solo será apagado en caso de mantenimiento, actualización o si algún error surge y requiere de apagado para su solución.
 
-En cuanto al lenguaje de programación las restricciones que se impondrán serán las restricciones propias de java y de la \gls{jvm}.
-Los protocolos de comunicación serán sencillos ya que la única comunicación va a ser
-de cada terminal con la base de datos que se hará a través de internet.
-
-
-
+Por último, se aplicarán las restricciones de java y la \gls{jvm} en todo el programa y el protocolo \gls{https} para las comunicaciones entre los ordenadores y la \gls{bd}.
 \subsection{Supuestos y dependencias}
-Respecto a los cambios esperados, considerados el hecho de que la tienda de ropa a
-la que vendemos el producto no sea compatible con la comunicación a través de
-internet. En ese caso, dejarían de ser nuestro target.
-
-Al utilizar java como lenguaje de programación nos podemos asegurar de que la solución funcione en cualquier sistema operativo ya que java es un lenguaje multiplataforma, lo que nos permite más flexibilidad a la hora de desarrollar el programa y hacer cambios al mismo. La \gls{bd} se puede instalar en sistemas Linux y Windows, ya que son los sistemas soportados por \gls{sql} de forma nativa sin necesidad de utilizar contenedores externos, y ya que son los sistemas mayoritariamente usados para servidores.
+En el supuesto de que la tienda no tenga conexión a internet de ningún tipo, dejaría de ser viable la solución.
+Al utilizar java como lenguaje de programación la solución funcionará en cualquier sistema operativo ya que java es un lenguaje multiplataforma, lo que nos permite más flexibilidad a la hora de desarrollar el programa y hacer cambios al mismo. La \gls{bd} se puede instalar en sistemas Linux y Windows, ya que son los sistemas soportados por \gls{sql} de forma nativa sin necesidad de utilizar contenedores externos, y ya que son los sistemas mayoritariamente usados para servidores.
 
 \subsection{Requisitos futuros}
-Como futuros requisitos para ampliar la funcionalidad del sistema aparecen diversas ideas:
+Como futuros requisitos para ampliar la funcionalidad del sistema se sugieren diversas ideas:
 \begin{itemize}
     \item Proporcionar a los socios la posibilidad de optar a un sistema de suscripción por el cual tendrían acceso a ropa exclusiva.
-    \item Un sistema de cookies para poder explotarlas y adaptar mejor la ropa que se ofrece al cliente.
+    \item Un sistema de cookies para poder explotarlas y adaptar mejor las recomendaciones de ropa que se ofrecen al cliente.
     \item La integración de una lista negra para los usuarios que intenten pagar con tarjetas falsas o intenten cometer cualquier tipo de fraude.
 \end{itemize}
 
@@ -66,6 +53,6 @@ Esta primera versión el administrador del sistema tendrá un papel fundamental 
 muchas situaciones, pero cuando el proceso tenga más madurez y pase por una serie
 de revisiones se obtendrán módulos más claros con roles bien definidos.
 
-Algunos casos de uso cambiarán, y se optimizarán los módulos creados en función de
+Algunos casos de uso cambiarán y se optimizarán los módulos creados en función de
 las necesidades del cliente, pero la base funcional no cambiará ya que hemos
 delimitado el software a los actores y funcionalidades definidas en este documento.
