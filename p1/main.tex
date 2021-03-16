@@ -22,7 +22,7 @@
 \usepackage{etoolbox}
 \usepackage[style=ieee,backend=bibtex,sorting=ynt,defernumbers=true]{biblatex} 
 \addbibresource{references.bib}
-
+\renewcommand{\glossarysection}[2][]{}
 
 \patchcmd{\headrule}{\hrule}{\color{azulJuan}\hrule}{}{}
 \patchcmd{\footrule}{\hrule}{\color{azulJuan}\hrule}{}{}
