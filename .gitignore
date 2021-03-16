@@ -5,3 +5,6 @@
 *.acn
 *.log
 build/
+*-blx.bib
+*.bcf
+*.run.xml
