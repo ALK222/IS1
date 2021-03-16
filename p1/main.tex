@@ -12,17 +12,35 @@
 \usepackage[toc,page]{appendix} % Remove toc,page to render wo appendix
 \usepackage{hyperref}
 \usepackage[table]{xcolor}
+\usepackage{fancyhdr}
+\definecolor{azulJuan}{HTML}{6db9df}
 \usepackage{nameref}
 \usepackage{datetime}
 \usepackage{tikz}
 \usepackage[11pt]{moresize}
 \usepackage{enumerate}
+\usepackage{etoolbox}
+
+
+\patchcmd{\headrule}{\hrule}{\color{azulJuan}\hrule}{}{}
+\patchcmd{\footrule}{\hrule}{\color{azulJuan}\hrule}{}{}
+
 
 \usetikzlibrary{calc}
 \newcommand\HRule{\rule{\textwidth}{1pt}}
 
-\setabbreviationstyle[acronym]{short-long}
 
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Grupo 3}
+\fancyhead[RE,LO]{\nombredelproyecto}
+\fancyfoot[CE,CO]{\leftmark}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\setabbreviationstyle[acronym]{short-long}
 
 % New Commands
 \newcommand{\nombredelproyecto}{Tienda de ropa}
@@ -53,8 +71,9 @@ Rodrigo Souto Santos
 \begin{document}
 \begin{titlepage}
 	\begin{tikzpicture}[remember picture, overlay]
-		\draw[line width = 2pt] ($(current page.north west) + (0.5in,-0.5in)$) rectangle ($(current page.south east) + (-0.5in,0.5in)$);
+		\filldraw[draw=azulJuan,fill=white , line width = 2pt] ($(current page.north west) + (0.5in,-0.5in)$) rectangle ($(current page.south east) + (-0.5in,0.5in)$);
 	\end{tikzpicture}
+
 
 	\makeatletter
 	\centering

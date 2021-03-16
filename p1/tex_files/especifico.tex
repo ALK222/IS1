@@ -1,19 +1,19 @@
 \section{Requisitos específicos}
 \label{sec:req_esp}
 \subsection{Interfaces externos}
-En este apartado se mostraran las entradas y salidas del programa según las entidades de este mismo.
+En este apartado se mostrarán las entradas y salidas del programa según las entidades de este mismo.
 
 El producto consta de diferentes entradas y salidas, de este modo, en primer lugar se describen las siguientes entradas según el propósito de nuestro sistema:
 Un sistema de identificación de usuarios para poder ofrecer las distintas funcionalidades disponibles para cada tipo de usuario que haya en el sistema. Según sea el usuario de nuevo ingreso o ya existente en la base de datos se le solicitará unos elementos específicos.
 
-Al nuevo usuario, independientemente de si se trata de un cliente, administrador o empleado, se le solicita: nombre usuario, clave personal(contraseña) y datos personales. Si el usuario ya tiene una cuenta, únicamente le hará falta hacer log in introduciendo nombre usuario y contraseña. Además, el usuario dispondrá de la capacidad de cambiar su nombre identificativo, así como su contraseña, introduciendo los datos actuales del usuario como verificación de identidad y los nuevos datos que se quieran establecer.
+Al nuevo usuario, independientemente de si se trata de un cliente, administrador o empleado, se le solicita: nombre usuario, clave personal(contraseña) y datos personales. Si el usuario ya tiene una cuenta, únicamente le hará falta hacer \textit{log in} introduciendo nombre usuario y contraseña. Además, el usuario dispondrá de la capacidad de cambiar su nombre identificativo, así como su contraseña, introduciendo los datos actuales del usuario como verificación de identidad y los nuevos datos que se quieran establecer.
 
 En el caso de ser el usuario un administrador o un empleado, podrá sancionar a un cliente introduciendo sus datos.
 
-Destaca un menú que mostrará a los usuarios las principales funcionalidades del sistema disponibles. Las opciones variarán dependiendo de los privilegios que tenga la cuenta identificada en el sistema. En el caso de tratarse de un cliente podrá realizar la reservar, devolución o búsqueda de un producto, añadir un producto al carrito (para realizar la compra) e informar de algún desperfecto tras su compra.
-Para todas estas funciones el usuario deberá de haber hecho log in e introducir los datos correspondientes al producto (ID). En el caso de informar de un desperfecto deberá introducir un mensaje explicando el problema. Por otro lado, si se trata de la compra de un producto, se le solicitara añadir el producto al carrito para que posteriormente introduzca su tarjeta de crédito (en el caso de que no la haya ingresado al registrarse).
+El programa cuenta con un menú que mostrará a los usuarios las principales funcionalidades del sistema disponibles. Las opciones variarán dependiendo de los privilegios que tenga la cuenta identificada en el sistema. En el caso de tratarse de un cliente podrá realizar la reserva, devolución o búsqueda de un producto, añadir un producto al carrito (para realizar la compra) e informar de algún desperfecto tras su compra.
+Para todas estas funciones el usuario deberá de haber hecho \textit{log in} e introducir los datos correspondientes al producto (ID). En el caso de informar de un desperfecto deberá introducir un mensaje explicando el problema. Por otro lado, si se trata de la compra de un producto, se le solicitara añadir el producto al carrito para que posteriormente introduzca su tarjeta de crédito (en el caso de que no la haya ingresado al registrarse).
 
-Los administradores podrán añadir una nueva promoción introduciendo los datos correspondientes, así como eliminar una ya existente. Por otro lado, podrán aplicar un descuento a un producto, así como realizar actualizaciones de stock añadiendo o quitando productos. Para estas funciones será necesario que el administrador haya hecho log in e introduzca el ID del producto sobre el cual realizar los cambios.\vspace{5mm}
+Los administradores podrán añadir una nueva promoción introduciendo los datos correspondientes, así como eliminar una ya existente. Por otro lado, podrán aplicar un descuento a un producto, así como realizar actualizaciones de \textit{stock} añadiendo o quitando productos. Para estas funciones será necesario que el administrador haya hecho \textit{log in} e introduzca el ID del producto sobre el cual realizar los cambios.
 
 Por otro lado, en segundo lugar podemos destacar las siguientes salidas según las correspondientes entradas:
 
@@ -22,7 +22,7 @@ Con respecto a la reserva, búsqueda de un producto, se informará si la operaci
 
 Búsquedas. Las búsquedas pueden ser realizadas por cualquier usuario. Las búsquedas tendrán lugar a través del modelo especifico, talla, color, etc. El resultado de las búsquedas se mostrará por pantalla con las posibles opciones según los datos introducidos.
 
-Factura tras una compra. La compra de un producto generará un ticket el cual se mostrará en pantalla. También existe la opción de ser enviado por correo electrónico. El ticket se generará con los datos correspondientes a los productos elegidos acompañados del precio. Para ello, se debe estar registrado y haber hecho el log in.
+Factura tras una compra. La compra de un producto generará un ticket el cual se mostrará en pantalla. También existe la opción de ser enviado por correo electrónico. El ticket se generará con los datos correspondientes a los productos elegidos acompañados del precio. Para ello, se debe estar registrado y haber hecho el \textit{log in}.
 
 \begin{figure}[H]
     \centering
