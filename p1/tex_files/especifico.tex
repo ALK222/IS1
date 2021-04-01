@@ -361,7 +361,7 @@ Este programa presenta tres tipos de usuarios: clientes, empleados y administrad
         \hline
         \textbf{Postcondición}    & El usuario cierra sesión.                                                                             \\
         \hline
-        \textbf{Excepciones}      & La sesión de usuario se cerrará si se cierra el programa o sis e apaga el dispositivo que lo ejecuta. \\
+        \textbf{Excepciones}      & La sesión de usuario se cerrará si se cierra el programa o si se apaga el dispositivo que lo ejecuta. \\
         \hline
     \end{tabularx}
 \end{table}
@@ -377,21 +377,91 @@ Este programa presenta tres tipos de usuarios: clientes, empleados y administrad
 \end{figure}
 \newpage
 \paragraph{Añadir producto}
-El usuario introduce los credenciales, incluyendo el nombre de usuario y su contraseña. Tras introducir los datos el sistema comprueba si dichos datos existen en la BD. Si existe, se comprueba el ID del producto que desea añadir, y a continuación, se comprueba los ID de los productos de su cesta si tiene alguno, de forma que si coincide con alguno, se suma una cantidad del mismo producto a la cesta, y sino, se añade un nuevo producto a la cesta.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Añadir Producto}                                            \\
+        \hline
+        \textbf{Descripción}      & Añade el producto al carrito.                                       \\
+        \hline
+        \textbf{Actores}          & Cliente                                                             \\
+        \hline
+        \textbf{Precondición}     & El cliente debe estar logueado, existir y el producto debe existir. \\
+        \hline
+        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+        2.Selecciona un producto. \newline
+        3. El producto se añade al carrito                                                              \\
+        \hline
+        \textbf{Postcondición}    & El producto se añade al carrito.                                    \\
+        \hline
+        \textbf{Excepciones}      & El usuario no existe.                                               \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_añadirProducto.png}
 \end{figure}
 \newpage
 \paragraph{Buscar producto}
-Se piden los datos del producto a buscar, si estos son correctos, se busca el producto en la BD de datos, si este existe, se muestra el producto, sino, se informa de que no existen existencias del mismo.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Buscar Producto}             \\
+        \hline
+        \textbf{Descripción}      & Se busca un producto en la \gls{bd}. \\
+        \hline
+        \textbf{Actores}          & Administrador / Empleado / Cliente   \\
+        \hline
+        \textbf{Precondición}     & Ninguna.                             \\
+        \hline
+        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+        2.Selecciona un producto. \newline
+        3. El producto se añade al carrito                               \\
+        \hline
+        \textbf{Postcondición}    & Se muestra el producto buscado       \\
+        \hline
+        \textbf{Excepciones}      & El producto no existe.               \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_BuscarProducto.png}
 \end{figure}
 \newpage
 \paragraph{Actualizar stock}
-Se solicitan los datos de administrador, o empleado, si son correctos, se comprueba el ID del producto a añadir, y se solicita una modificación en la BD, si esta es aprobada, se actualiza la BD, sino se informa de que no se ha podido actualizar la BD.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Actualizar stock}                                                       \\
+        \hline
+        \textbf{Descripción}      & Se actualiza el stock de un producto.                                           \\
+        \hline
+        \textbf{Actores}          & Administrador                                                                   \\
+        \hline
+        \textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.               \\
+        \hline
+        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+        2. Se busca el producto. \newline
+        3. Se solicita modificar el stock \newline 4. Se aprueba la modificación. \newline 5. Se actualiza el stock \\
+        \hline
+        \textbf{Postcondición}    & Se actualiza el stock del producto                                              \\
+        \hline
+        \textbf{Excepciones}      & El producto no existe.
+        \newline El usuario no es administrador. \newline No se aprueba la modificación.                            \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_ActualizarStock.png}
