@@ -30,528 +30,690 @@ Factura tras una compra. La compra de un producto generará un \textit{ticket} e
 \subsection{Requisitos funcionales}
 Este programa presenta tres tipos de usuarios: clientes, empleados y administradores. A continuación presentamos cada uno de sus módulos:
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Cliente.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Cliente.png}
 \end{figure}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Administrador.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Administrador.png}
 \end{figure}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Empleado.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/Módulo_Empleado.png}
 \end{figure}
 
 \subsubsection{Gestión de usuarios}%USUARIOS
 \begin{figure}[H]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{Use_Cases/Gestion_Usuarios.png}
+	\centering
+	\includegraphics[width = 0.8\textwidth]{Use_Cases/Gestion_Usuarios.png}
 \end{figure}
 \newpage
 \paragraph{Alta cliente}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Alta cliente}                                                                                                                       \\
-        \hline
-        \textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de alta.                                                                              \\
-        \hline
-        \textbf{Actores}          & Cliente                                                                                                                                     \\
-        \hline
-        \textbf{Precondición}     & Inexistente                                                                                                                                 \\
-        \hline
-        \textbf{Secuencia normal} & 1. El usuario selecciona la opción ``registrarse''. \newline
-        2. Introducir usuario y contraseña.                                                                                                                                     \\
-        \hline
-        \textbf{Postcondición}    & El cliente queda dado de alta (registrado) y se muestra por pantalla el mensaje ``Usuario añadido''.                                        \\
-        \hline
-        \textbf{Excepciones}      & Si el usuario que se introduce ya existe en la \gls{bd} aparece por pantalla el mensaje ``Usuario ya existente, por favor introduzca otro'' \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Alta cliente}                                                                                                                       \\
+		\hline
+		\textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de alta.                                                                              \\
+		\hline
+		\textbf{Actores}          & Cliente                                                                                                                                     \\
+		\hline
+		\textbf{Precondición}     & Inexistente                                                                                                                                 \\
+		\hline
+		\textbf{Secuencia normal} & 1. El usuario selecciona la opción ``registrarse''. \newline 2. Introducir usuario y contraseña.                                            \\
+		\hline
+		\textbf{Postcondición}    & El cliente queda dado de alta (registrado) y se muestra por pantalla el mensaje ``Usuario añadido''.                                        \\
+		\hline
+		\textbf{Excepciones}      & Si el usuario que se introduce ya existe en la \gls{bd} aparece por pantalla el mensaje ``Usuario ya existente, por favor introduzca otro'' \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/alta_cliente.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/alta_cliente.png}
 \end{figure}
 \newpage
 \paragraph{Baja cliente}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Baja cliente}                                                                                                                                \\
-        \hline
-        \textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de baja.                                                                                       \\
-        \hline
-        \textbf{Actores}          & Cliente                                                                                                                                              \\
-        \hline
-        \textbf{Precondición}     & El cliente debe estar dado de alta y debe existir                                                                                                    \\
-        \hline
-        \textbf{Secuencia normal} & 1. El cliente introduce sus datos y se loguea. \newline
-        2. El cliente selecciona la opción ``Darse de baja''                                                                                                                             \\
-        \hline
-        \textbf{Postcondición}    & El usuario se eliminará de la \gls{bd} y aparecerá en pantalla el mensaje ``El usuario ha sido borrado correctamente''.                              \\
-        \hline
-        \textbf{Excepciones}      & En el caso de que los datos introducidos en la \gls{bd} no coincidan con los existentes se mostrará por pantalla el mensaje ``Usuario inexistente''. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Baja cliente}                                                                                                                                \\
+		\hline
+		\textbf{Descripción}      & El cliente introduce sus datos en la \gls{bd} y se da de baja.                                                                                       \\
+		\hline
+		\textbf{Actores}          & Cliente                                                                                                                                              \\
+		\hline
+		\textbf{Precondición}     & El cliente debe estar dado de alta y debe existir.                                                                                                   \\
+		\hline
+		\textbf{Secuencia normal} & 1. El cliente introduce sus datos y se loguea. \newline 2. El cliente selecciona la opción ``Darse de baja''.                                        \\
+		\hline
+		\textbf{Postcondición}    & El usuario se eliminará de la \gls{bd} y aparecerá en pantalla el mensaje ``El usuario ha sido borrado correctamente''.                              \\
+		\hline
+		\textbf{Excepciones}      & En el caso de que los datos introducidos en la \gls{bd} no coincidan con los existentes se mostrará por pantalla el mensaje ``Usuario inexistente''. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/baja_cliente.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/baja_cliente.png}
 \end{figure}
 \newpage
 \paragraph{Añadir Administrador}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Alta administrador}                                                                                                                                                                                                                                                                                                                         \\
-        \hline
-        \textbf{Descripción}      & El usuario introduce sus datos y, si no existen ya, se guardarán en la \gls{bd} y se le darán permisos de administrador.                                                                                                                                                                                                                            \\
-        \hline
-        \textbf{Actores}          & Administrador                                                                                                                                                                                                                                                                                                                                       \\
-        \hline
-        \textbf{Precondición}     & Los datos del usuario deben ser correctos y se le tiene que haber concedido la opción de convertirse en administrador.                                                                                                                                                                                                                              \\
-        \hline
-        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea \newline
-        2. Selecciona la opción ``Obtener permisos de administrador''.                                                                                                                                                                                                                                                                                                                  \\
-        \hline
-        \textbf{Postcondición}    & El usuario consigue permisos de administrador.                                                                                                                                                                                                                                                                                                      \\
-        \hline
-        \textbf{Excepciones}      & Si el usuario introduce datos erróneos aparecerá un mensaje informando al usuario de ello. Si el usuario ya es administrador se mostrará por pantalla el mensaje ``Este usuario ya es administrador''. Si el usuario no tiene permiso para ser administrador se mostrará por pantalla el mensaje ``Usuario no válido para obtener estos permisos''. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Alta administrador}                                                                                                                                                                                                                                                                                                                         \\
+		\hline
+		\textbf{Descripción}      & El usuario introduce sus datos y, si no existen ya, se guardarán en la \gls{bd} y se le darán permisos de administrador.                                                                                                                                                                                                                            \\
+		\hline
+		\textbf{Actores}          & Administrador                                                                                                                                                                                                                                                                                                                                       \\
+		\hline
+		\textbf{Precondición}     & Los datos del usuario deben ser correctos y se le tiene que haber concedido la opción de convertirse en administrador.                                                                                                                                                                                                                              \\
+		\hline
+		\textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea \newline 2. Selecciona la opción ``Obtener permisos de administrador''.                                                                                                                                                                                                                               \\
+		\hline
+		\textbf{Postcondición}    & El usuario consigue permisos de administrador.                                                                                                                                                                                                                                                                                                      \\
+		\hline
+		\textbf{Excepciones}      & Si el usuario introduce datos erróneos aparecerá un mensaje informando al usuario de ello. Si el usuario ya es administrador se mostrará por pantalla el mensaje ``Este usuario ya es administrador''. Si el usuario no tiene permiso para ser administrador se mostrará por pantalla el mensaje ``Usuario no válido para obtener estos permisos''. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.65\textwidth]{Use_Cases/alta_admin.png}
+	\centering
+	\includegraphics[width=0.65\textwidth]{Use_Cases/alta_admin.png}
 \end{figure}
 \newpage
 \paragraph{Baja administrador}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Baja administrador}                                                                                            \\
-        \hline
-        \textbf{Descripción}      & El usuario introduce sus datos y, si existen , se le dará de baja como administrador, perdiendo sus permisos como tal. \\
-        \hline
-        \textbf{Actores}          & Administrador                                                                                                          \\
-        \hline
-        \textbf{Precondición}     & El usuario debe haberse dado de alta como administrador y existir en la \gls{bd}.                                      \\
-        \hline
-        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
-        2. Selecciona la opción ``Darse de baja como administrador''.                                                                                      \\
-        \hline
-        \textbf{Postcondición}    & El usuario deja de ser administrador.                                                                                  \\
-        \hline
-        \textbf{Excepciones}      & Si al introducir los datos el usuario no existe se informará con el mensaje ``Usuario no encontrado''.                 \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Baja administrador}                                                                                            \\
+		\hline
+		\textbf{Descripción}      & El usuario introduce sus datos y, si existen , se le dará de baja como administrador, perdiendo sus permisos como tal. \\
+		\hline
+		\textbf{Actores}          & Administrador                                                                                                          \\
+		\hline
+		\textbf{Precondición}     & El usuario debe haberse dado de alta como administrador y existir en la \gls{bd}.                                      \\
+		\hline
+		\textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
+		2. Selecciona la opción ``Darse de baja como administrador''.                                                                                      \\
+		\hline
+		\textbf{Postcondición}    & El usuario deja de ser administrador.                                                                                  \\
+		\hline
+		\textbf{Excepciones}      & Si al introducir los datos el usuario no existe se informará con el mensaje ``Usuario no encontrado''.                 \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/baja_admin.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/baja_admin.png}
 \end{figure}
 \newpage
 \paragraph{Alta empleado}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Alta empleado}                                                                                         \\
-        \hline
-        \textbf{Descripción}      & Se introducen los datos del usuario y se registra como empleado en la \gls{bd}.                                \\
-        \hline
-        \textbf{Actores}          & Empleado                                                                                                       \\
-        \hline
-        \textbf{Precondición}     & El usuario debe tener permiso para convertirse en empleado.                                                    \\
-        \hline
-        \textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
-        2. Selecciona la opción ``Darse de alta como empleado''.                                                                                   \\
-        \hline
-        \textbf{Postcondición}    & Los datos del empleado se han añadido en la \gls{bd} y se muestra por pantalla ``Empleado añadido con éxito''. \\
-        \hline
-        \textbf{Excepciones}      & Si el empleado ya existe se mostrará por pantalla el mensaje ``Este empleado ya existe''.                      \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Alta empleado}                                                                                         \\
+		\hline
+		\textbf{Descripción}      & Se introducen los datos del usuario y se registra como empleado en la \gls{bd}.                                \\
+		\hline
+		\textbf{Actores}          & Empleado                                                                                                       \\
+		\hline
+		\textbf{Precondición}     & El usuario debe tener permiso para convertirse en empleado.                                                    \\
+		\hline
+		\textbf{Secuencia normal} & 1. El usuario introduce sus datos y se loguea. \newline
+		2. Selecciona la opción ``Darse de alta como empleado''.                                                                                   \\
+		\hline
+		\textbf{Postcondición}    & Los datos del empleado se han añadido en la \gls{bd} y se muestra por pantalla ``Empleado añadido con éxito''. \\
+		\hline
+		\textbf{Excepciones}      & Si el empleado ya existe se mostrará por pantalla el mensaje ``Este empleado ya existe''.                      \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/Alta_empleado.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/Alta_empleado.png}
 \end{figure}
 \newpage
 \paragraph{Baja empleado}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Baja empleado}                                                                                                 \\
-        \hline
-        \textbf{Descripción}      & Una vez introducidos los datos, el empleado se da de baja perdiendo sus permisos como tal.                             \\
-        \hline
-        \textbf{Actores}          & Empleado                                                                                                               \\
-        \hline
-        \textbf{Precondición}     & El usuario debe haberse dado de alta como empleado.                                                                    \\
-        \hline
-        \textbf{Secuencia normal} & 1. Se introducen los datos del empleado en la \gls{bd}. \newline
-        2. Selecciona la opción ``Dar de baja como empleado''.                                                                                             \\
-        \hline
-        \textbf{Postcondición}    & Los datos del empleado se borran de la \gls{bd} y se muestra por pantalla ``Empleado dado de baja con éxito''.         \\
-        \hline
-        \textbf{Excepciones}      & Si los datos del empleado no coinciden con los existentes se muestra por pantalla el mensaje ``Empleado inexistente''. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Baja empleado}                                                                                                 \\
+		\hline
+		\textbf{Descripción}      & Una vez introducidos los datos, el empleado se da de baja perdiendo sus permisos como tal.                             \\
+		\hline
+		\textbf{Actores}          & Empleado                                                                                                               \\
+		\hline
+		\textbf{Precondición}     & El usuario debe haberse dado de alta como empleado.                                                                    \\
+		\hline
+		\textbf{Secuencia normal} & 1. Se introducen los datos del empleado en la \gls{bd}. \newline
+		2. Selecciona la opción ``Dar de baja como empleado''.                                                                                             \\
+		\hline
+		\textbf{Postcondición}    & Los datos del empleado se borran de la \gls{bd} y se muestra por pantalla ``Empleado dado de baja con éxito''.         \\
+		\hline
+		\textbf{Excepciones}      & Si los datos del empleado no coinciden con los existentes se muestra por pantalla el mensaje ``Empleado inexistente''. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/Baja empleado.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/Baja empleado.png}
 \end{figure}
 \newpage
 \paragraph{Sancionar cliente}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Sancionar cliente}                                                                                            \\
-        \hline
-        \textbf{Descripción}      & Se sanciona a un cliente, en caso de ser reincidente, se agrava su sanción.                                           \\
-        \hline
-        \textbf{Actores}          & Administrad / Empleado                                                                                                \\
-        \hline
-        \textbf{Precondición}     & El cliente debe existir.                                                                                              \\
-        \hline
-        \textbf{Secuencia normal} & 1. EL usuario (empleado o administrador) introduce sus datos y se loguea. \newline
-        2. Selecciona la opción ``Sancionar cliente''.\newline
-        3. Introduce los datos del cliente en cuestión y lo sanciona de manera grave o leve.                                                              \\
-        \hline
-        \textbf{Postcondición}    & La sanción al cliente se guarda en la \gls{bd}.                                                                       \\
-        \hline
-        \textbf{Excepciones}      & Si El cliente no ha cometido ninguna infracción la sanción no tendrá consecuencias y se informará de ello al usuario. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Sancionar cliente}                                                                                            \\
+		\hline
+		\textbf{Descripción}      & Se sanciona a un cliente, en caso de ser reincidente, se agrava su sanción.                                           \\
+		\hline
+		\textbf{Actores}          & Administrad / Empleado                                                                                                \\
+		\hline
+		\textbf{Precondición}     & El cliente debe existir.                                                                                              \\
+		\hline
+		\textbf{Secuencia normal} & 1. EL usuario (empleado o administrador) introduce sus datos y se loguea. \newline
+		2. Selecciona la opción ``Sancionar cliente''.\newline
+		3. Introduce los datos del cliente en cuestión y lo sanciona de manera grave o leve.                                                              \\
+		\hline
+		\textbf{Postcondición}    & La sanción al cliente se guarda en la \gls{bd}.                                                                       \\
+		\hline
+		\textbf{Excepciones}      & Si El cliente no ha cometido ninguna infracción la sanción no tendrá consecuencias y se informará de ello al usuario. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/Sancionar Cliente.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/Sancionar Cliente.png}
 \end{figure}
 \newpage
 \paragraph{Cambiar nombre}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Cambiar nombre}                                                                                                                                                    \\
-        \hline
-        \textbf{Descripción}      & El nombre del usuario cambia en la \gls{bd}.                                                                                                                               \\
-        \hline
-        \textbf{Actores}          & Administrad / Empleado / Cliente                                                                                                                                           \\
-        \hline
-        \textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                                                                    \\
-        \hline
-        \textbf{Secuencia normal} & 1. EL usuario introduce sus datos y se loguea. \newline
-        2. Selecciona la opción ``Cambiar nombre''. \newline
-        3. Introduce el nombre que quiera utilizar                                                                                                                                                             \\
-        \hline
-        \textbf{Postcondición}    & El usuario registra su nuevo nombre en la \gls{bd} y se le informa de ello.                                                                                                \\
-        \hline
-        \textbf{Excepciones}      & Si los datos son incorrectos se informará de ello. En el caso de que el nombre nuevo ya exista en la \gls{bd} se mostrará por pantalla el mensaje ``Nombre ya existente''. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Cambiar nombre}                                                                                                                                                    \\
+		\hline
+		\textbf{Descripción}      & El nombre del usuario cambia en la \gls{bd}.                                                                                                                               \\
+		\hline
+		\textbf{Actores}          & Administrad / Empleado / Cliente                                                                                                                                           \\
+		\hline
+		\textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                                                                    \\
+		\hline
+		\textbf{Secuencia normal} & 1. EL usuario introduce sus datos y se loguea. \newline
+		2. Selecciona la opción ``Cambiar nombre''. \newline
+		3. Introduce el nombre que quiera utilizar                                                                                                                                                             \\
+		\hline
+		\textbf{Postcondición}    & El usuario registra su nuevo nombre en la \gls{bd} y se le informa de ello.                                                                                                \\
+		\hline
+		\textbf{Excepciones}      & Si los datos son incorrectos se informará de ello. En el caso de que el nombre nuevo ya exista en la \gls{bd} se mostrará por pantalla el mensaje ``Nombre ya existente''. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/Actualizar Nombre.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/Actualizar Nombre.png}
 \end{figure}
 \newpage
 \paragraph{Cambiar contraseña}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Cambiar contraseña}                                                                                                                                                                            \\
-        \hline
-        \textbf{Descripción}      & El usuario cambia la contraseña de su cuenta.                                                                                                                                                          \\
-        \hline
-        \textbf{Actores}          & Administrad / Empleado / Cliente                                                                                                                                                                       \\
-        \hline
-        \textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                                                                                                \\
-        \hline
-        \textbf{Secuencia normal} & 1. EL usuario introduce sus datos y se loguea. \newline
-        2. Selecciona la opción ``Cambiar contraseña''. \newline
-        3. Introduce la nueva contraseña                                                                                                                                                                                                   \\
-        \hline
-        \textbf{Postcondición}    & El usuario registra su nuevo contraseña en la \gls{bd} y se le informa de ello.                                                                                                                        \\
-        \hline
-        \textbf{Excepciones}      & Si los datos son incorrectos se informará de ello. En el caso de que la contraseña no cumpla con los requisitos estándar de las contraseñas se muestras por pantalla el aviso ``Contraseña inválida''. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Cambiar contraseña}                                                                                                                                                                            \\
+		\hline
+		\textbf{Descripción}      & El usuario cambia la contraseña de su cuenta.                                                                                                                                                          \\
+		\hline
+		\textbf{Actores}          & Administrad / Empleado / Cliente                                                                                                                                                                       \\
+		\hline
+		\textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                                                                                                \\
+		\hline
+		\textbf{Secuencia normal} & 1. EL usuario introduce sus datos y se loguea. \newline
+		2. Selecciona la opción ``Cambiar contraseña''. \newline
+		3. Introduce la nueva contraseña                                                                                                                                                                                                   \\
+		\hline
+		\textbf{Postcondición}    & El usuario registra su nuevo contraseña en la \gls{bd} y se le informa de ello.                                                                                                                        \\
+		\hline
+		\textbf{Excepciones}      & Si los datos son incorrectos se informará de ello. En el caso de que la contraseña no cumpla con los requisitos estándar de las contraseñas se muestras por pantalla el aviso ``Contraseña inválida''. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/cambiar_contrasena.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/cambiar_contrasena.png}
 \end{figure}
 \newpage
 \paragraph{Login}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Login}                                                                                                            \\
-        \hline
-        \textbf{Descripción}      & El usuario inicia sesión con sus datos.                                                                                   \\
-        \hline
-        \textbf{Actores}          & Administrad / Empleado / Cliente                                                                                          \\
-        \hline
-        \textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                   \\
-        \hline
-        \textbf{Secuencia normal} & 1. EL usuario introduce sus datos. \newline
-        2. Selecciona la opción ``Iniciar sesión''. \newline                                                                                                  \\
-        \hline
-        \textbf{Postcondición}    & El usuario inicia sesión.                                                                                                 \\
-        \hline
-        \textbf{Excepciones}      & En caso de que los datos introducidos en no coincidan con los existentes en la \gls{bd}, se informará de ello al usuario. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Login}                                                                                                            \\
+		\hline
+		\textbf{Descripción}      & El usuario inicia sesión con sus datos.                                                                                   \\
+		\hline
+		\textbf{Actores}          & Administrad / Empleado / Cliente                                                                                          \\
+		\hline
+		\textbf{Precondición}     & El usuario debe existir y dado de alta.                                                                                   \\
+		\hline
+		\textbf{Secuencia normal} & 1. EL usuario introduce sus datos. \newline
+		2. Selecciona la opción ``Iniciar sesión''. \newline                                                                                                  \\
+		\hline
+		\textbf{Postcondición}    & El usuario inicia sesión.                                                                                                 \\
+		\hline
+		\textbf{Excepciones}      & En caso de que los datos introducidos en no coincidan con los existentes en la \gls{bd}, se informará de ello al usuario. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/login.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/login.png}
 \end{figure}
 \newpage
 \paragraph{Logout}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Logout}                                                                                       \\
-        \hline
-        \textbf{Descripción}      & El usuario cierra sesión.                                                                             \\
-        \hline
-        \textbf{Actores}          & Administrad / Empleado / Cliente                                                                      \\
-        \hline
-        \textbf{Precondición}     & El usuario debe estar logueado, existir y dado de alta.                                               \\
-        \hline
-        \textbf{Secuencia normal} & 1. EL usuario selecciona la opción ``Cerrar sesión''. \newline                                        \\
-        \hline
-        \textbf{Postcondición}    & El usuario cierra sesión.                                                                             \\
-        \hline
-        \textbf{Excepciones}      & La sesión de usuario se cerrará si se cierra el programa o si se apaga el dispositivo que lo ejecuta. \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Logout}                                                                                       \\
+		\hline
+		\textbf{Descripción}      & El usuario cierra sesión.                                                                             \\
+		\hline
+		\textbf{Actores}          & Administrad / Empleado / Cliente                                                                      \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado, existir y dado de alta.                                               \\
+		\hline
+		\textbf{Secuencia normal} & 1. EL usuario selecciona la opción ``Cerrar sesión''. \newline                                        \\
+		\hline
+		\textbf{Postcondición}    & El usuario cierra sesión.                                                                             \\
+		\hline
+		\textbf{Excepciones}      & La sesión de usuario se cerrará si se cierra el programa o si se apaga el dispositivo que lo ejecuta. \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{Use_Cases/Logout.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/Logout.png}
 \end{figure}
 \newpage
 \subsubsection{Gestión de inventario}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width = 0.8\textwidth]{Use_Cases/gestion_de_inventario.png}
+	\centering
+	\includegraphics[width = 0.8\textwidth]{Use_Cases/gestion_de_inventario.png}
 \end{figure}
 \newpage
 \paragraph{Añadir producto}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Añadir Producto}                                            \\
-        \hline
-        \textbf{Descripción}      & Añade el producto al carrito.                                       \\
-        \hline
-        \textbf{Actores}          & Cliente                                                             \\
-        \hline
-        \textbf{Precondición}     & El cliente debe estar logueado, existir y el producto debe existir. \\
-        \hline
-        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
-        2.Selecciona un producto. \newline
-        3. El producto se añade al carrito                                                              \\
-        \hline
-        \textbf{Postcondición}    & El producto se añade al carrito.                                    \\
-        \hline
-        \textbf{Excepciones}      & El usuario no existe.                                               \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Añadir Producto}                                            \\
+		\hline
+		\textbf{Descripción}      & Añade el producto al carrito.                                       \\
+		\hline
+		\textbf{Actores}          & Cliente                                                             \\
+		\hline
+		\textbf{Precondición}     & El cliente debe estar logueado, existir y el producto debe existir. \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2.Selecciona un producto. \newline
+		3. El producto se añade al carrito.                                                             \\
+		\hline
+		\textbf{Postcondición}    & El producto se añade al carrito.                                    \\
+		\hline
+		\textbf{Excepciones}      & El usuario no existe.                                               \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_añadirProducto.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_añadirProducto.png}
 \end{figure}
 \newpage
 \paragraph{Buscar producto}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Buscar Producto}             \\
-        \hline
-        \textbf{Descripción}      & Se busca un producto en la \gls{bd}. \\
-        \hline
-        \textbf{Actores}          & Administrador / Empleado / Cliente   \\
-        \hline
-        \textbf{Precondición}     & Ninguna.                             \\
-        \hline
-        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
-        2.Selecciona un producto. \newline
-        3. El producto se añade al carrito                               \\
-        \hline
-        \textbf{Postcondición}    & Se muestra el producto buscado       \\
-        \hline
-        \textbf{Excepciones}      & El producto no existe.               \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Buscar Producto}             \\
+		\hline
+		\textbf{Descripción}      & Se busca un producto en la \gls{bd}. \\
+		\hline
+		\textbf{Actores}          & Administrador / Empleado / Cliente   \\
+		\hline
+		\textbf{Precondición}     & Ninguna.                             \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2.Selecciona un producto. \newline
+		3. El producto se añade al carrito                               \\
+		\hline
+		\textbf{Postcondición}    & Se muestra el producto buscado.      \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.               \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_BuscarProducto.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_BuscarProducto.png}
 \end{figure}
 \newpage
 \paragraph{Actualizar stock}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Actualizar stock}                                                       \\
-        \hline
-        \textbf{Descripción}      & Se actualiza el stock de un producto.                                           \\
-        \hline
-        \textbf{Actores}          & Administrador                                                                   \\
-        \hline
-        \textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.               \\
-        \hline
-        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
-        2. Se busca el producto. \newline
-        3. Se solicita modificar el stock \newline 4. Se aprueba la modificación. \newline 5. Se actualiza el stock \\
-        \hline
-        \textbf{Postcondición}    & Se actualiza el stock del producto                                              \\
-        \hline
-        \textbf{Excepciones}      & El producto no existe.
-        \newline El usuario no es administrador. \newline No se aprueba la modificación.                            \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Actualizar stock}                                                        \\
+		\hline
+		\textbf{Descripción}      & Se actualiza el stock de un producto.                                            \\
+		\hline
+		\textbf{Actores}          & Administrador                                                                    \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.                \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se busca el producto. \newline
+		3. Se solicita modificar el stock \newline 4. Se aprueba la modificación. \newline 5. Se actualiza el stock. \\
+		\hline
+		\textbf{Postcondición}    & Se actualiza el stock del producto.                                              \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no es administrador. \newline No se aprueba la modificación.                             \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_ActualizarStock.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_ActualizarStock.png}
 \end{figure}
 \newpage
 \paragraph{Quitar producto}
 \begin{table}[H]
-    \centering
-    \small
-    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
-        \hline
-        \rowcolor{lightgray}
-        \textbf{Nombre del caso}  & \textbf{Actualizar stock}                                                          \\
-        \hline
-        \textbf{Descripción}      & Se quita un producto de la \gls{bd}.                                               \\
-        \hline
-        \textbf{Actores}          & Administrador                                                                      \\
-        \hline
-        \textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.                  \\
-        \hline
-        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
-        2. Se busca el producto. \newline
-        3. Se solicita eliminar el producto \newline 4. Se aprueba la eliminación. \newline 5. Se elimina el producto. \\
-        \hline
-        \textbf{Postcondición}    & Se elimina el producto de la \gls{bd}                                              \\
-        \hline
-        \textbf{Excepciones}      & El producto no existe.
-        \newline El usuario no es administrador. \newline No se aprueba la eliminación.                                \\
-        \hline
-    \end{tabularx}
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Quitar producto}                                                           \\
+		\hline
+		\textbf{Descripción}      & Se quita un producto de la \gls{bd}.                                               \\
+		\hline
+		\textbf{Actores}          & Administrador                                                                      \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.                  \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se busca el producto. \newline
+		3. Se solicita eliminar el producto \newline 4. Se aprueba la eliminación. \newline 5. Se elimina el producto. \\
+		\hline
+		\textbf{Postcondición}    & Se elimina el producto de la \gls{bd}.                                             \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no es administrador. \newline No se aprueba la eliminación.                                \\
+		\hline
+	\end{tabularx}
 \end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}
 \end{figure}
 \newpage
 \paragraph{Aplicar descuento}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, selecciona la opción de descuentos, verifica si el cliente tiene derecho a un descuento, si el usuario no posee ninguna opción a descuenta sale, y si tiene opción a descuento lo aplica al producto y actualiza el precio final del producto o compra total.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Aplicar descuento}                               \\
+		\hline
+		\textbf{Descripción}      & Se aplica un descuento al carrito.                       \\
+		\hline
+		\textbf{Actores}          & Cliente                                                  \\
+		\hline
+		\textbf{Precondición}     & El usuario debe existir.                                 \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Busca los descuentos. \newline
+		3. Aplica el descuento.                                                              \\
+		\hline
+		\textbf{Postcondición}    & Se aplica un descuento al carrito.                       \\
+		\hline
+		\textbf{Excepciones}      & El usuario no existe. \newline No hay descuento posible. \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/aplicar_descuento.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/aplicar_descuento.png}
 \end{figure}
 \newpage
 \paragraph{Informar de desperfecto}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, selecciona un artículo, escribe el informe acerca de los desperfectos del mismo y al final lo envía.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Informar desperfecto}                               \\
+		\hline
+		\textbf{Descripción}      & Un usuario informa del desperfecto de un producto comprado. \\
+		\hline
+		\textbf{Actores}          & Cliente                                                     \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado.                             \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Escribe y envía el informe.                                                          \\
+		\hline
+		\textbf{Postcondición}    & Se informa del desperfecto.                                 \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no existe.                                                          \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/informar_de_desperfecto.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/informar_de_desperfecto.png}
 \end{figure}
 \newpage
 \subsubsection{Gestión de pedidos}
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/gestion de pedidos.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/gestion de pedidos.png}
 \end{figure}
 \newpage
 \paragraph{Añadir promoción}
-Ingresar usuario y contraseña, comprobar si la persona está registrada en la \gls{bd}. Si el usuario no existe sale. Si el usuario existe, consulta la lista de los productos en la \gls{bd}, se selecciona el producto(s) que se quiere promocionar, aplico la promoción, y actualizo el precio final del producto con la promoción incluida.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Añadir promoción}                                                    \\
+		\hline
+		\textbf{Descripción}      & Añade una promoción al producto.                                             \\
+		\hline
+		\textbf{Actores}          & Administrador /  Empleado                                                    \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador o empleado. \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se busca el producto. \newline
+		3. Se aplica la promoción.                                                                               \\
+		\hline
+		\textbf{Postcondición}    & Se añade la promoción al producto.                                           \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no existe.                                                                           \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/añadir_promocion.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/añadir_promocion.png}
 \end{figure}
 \newpage
 \paragraph{Quitar promoción}
-Se obtienen los datos del administrador y se comprueba si existe. Si existe, podrá consultar dicha promoción y eliminarla, al terminar se informará del éxito de la operación. Por el contrario si no se encuentra el usuario, se informará de que se ha producido un error.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Quitar promoción}                                                    \\
+		\hline
+		\textbf{Descripción}      & El usuario elimina la promoción.                                             \\
+		\hline
+		\textbf{Actores}          & Administrador / Empleado                                                     \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador o empleado. \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se busca el producto. \newline
+		3. Se le quita la promoción.                                                                             \\
+		\hline
+		\textbf{Postcondición}    & Se elimina la promoción.                                                     \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no es administrador o empleado. \newline No existe la promoción.                     \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/quitar_promocion.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/quitar_promocion.png}
 \end{figure}
 \newpage
 \paragraph{Compras}
-Se introduce el nombre de usuario y la contraseña del cliente. Tras introducir los datos el sistema determina si son correctos o no. Si son correctos el usuario podrá añadir productos a su cesta y cuando quiera comprar alguno, se comprobará si tiene suficiente dinero en el monedero virtual, si lo tiene, se informará del éxito de su compra si no, se informará de saldo insuficiente. En el caso de no existir el usuario, se informará de ello.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Comprar producto}        \\
+		\hline
+		\textbf{Descripción}      & Un cliente compra un producto.   \\
+		\hline
+		\textbf{Actores}          & Cliente                          \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado.  \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se añaden productos al carro. \newline
+		3. Se procede a realizar el pago.                            \\
+		\hline
+		\textbf{Postcondición}    & Se realiza la compra.            \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no existe.                               \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/comprar_producto.png}
+	\centering
+	\includegraphics[width=0.7\textwidth]{Use_Cases/comprar_producto.png}
 \end{figure}
 \newpage
 \paragraph{Devolución de pedido}
-Se introduce el usuario y la contraseña del cliente. Si existe, podrá consultar sus productos comprados y proceder a su devolución, en tal caso, el saldo de dicho producto comprado volverá al monedero virtual de dicho cliente. En caso de no existir dicho usuario, se informará de ello.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Devolución de pedido}                   \\
+		\hline
+		\textbf{Descripción}      & Un cliente devuelve un producto.                \\
+		\hline
+		\textbf{Actores}          & Cliente                                         \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado.                 \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. El cliente consulta sus compras. \newline
+		3. El cliente realiza la devolución del producto.                           \\
+		\hline
+		\textbf{Postcondición}    & El producto se devuelve y se devuelve el saldo. \\
+		\hline
+		\textbf{Excepciones}      & El cliente no existe.                           \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/realizar_devolucion.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/realizar_devolucion.png}
 \end{figure}
 \newpage
 \paragraph{Reservar producto}
-Se obtiene el usuario y contraseña del usuario y se comprueban en la \gls{bd}. Si se encuentran, el cliente podrá consultar y reservar dicho producto en el caso de que tenga suficiente saldo en su monedero virtual, en tal caso se informará del éxito del producto reservado, si no, se informará al cliente de saldo insuficiente. En el caso de no existir usuario se informará de ello.
+\begin{table}[H]
+	\centering
+	\small
+	\begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+		\hline
+		\rowcolor{lightgray}
+		\textbf{Nombre del caso}  & \textbf{Reservar producto}                                                              \\
+		\hline
+		\textbf{Descripción}      & Un cliente reserva un producto.                                                         \\
+		\hline
+		\textbf{Actores}          & Cliente                                                                                 \\
+		\hline
+		\textbf{Precondición}     & El usuario debe estar logueado.                                                         \\
+		\hline
+		\textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+		2. Se busca el producto. \newline
+		3. El cliente reserva el producto \newline 4. Se consulta el saldo del cliente. \newline 5. Se reserva el producto. \\
+		\hline
+		\textbf{Postcondición}    & Se reserva el producto.                                                                 \\
+		\hline
+		\textbf{Excepciones}      & El producto no existe.
+		\newline El usuario no existe. \newline No hay saldo para realizar la reserva.                                      \\
+		\hline
+	\end{tabularx}
+\end{table}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.8\textwidth]{Use_Cases/reservar_producto.png}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Use_Cases/reservar_producto.png}
 \end{figure}
 \newpage
 \subsection{Requisitos de rendimiento}
@@ -568,17 +730,17 @@ Las operaciones de modificación de datos serán accesibles desde un mismo sitio
 %     Administrador-Empleado-Cliente & ``El administrador podrá cambiar las credenciales de los clientes y empleados bajo la demanda de dicho usuario'' \\
 % \end{tabularx}
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=\textwidth]{images/DiagramaER.png}
-    \caption{Diagrama ER de la base de datos usada en el programa}
+	\centering
+	\includegraphics[width=\textwidth]{images/DiagramaER.png}
+	\caption{Diagrama ER de la base de datos usada en el programa}
 \end{figure}
 \subsection{Restricciones de diseño}
 El servidor sólo estaría disponible para ordenadores con Windows y Linux dado que este no cuenta con soporte para dispositivos Android ni dispositivos de la marca Apple.
 \subsection{Atributos del sistema software}
 La funcionalidad del programa estará acorde a los casos de uso en todo momento.
 \begin{itemize}
-    \item\textbf{Fiabilidad:} el programa asegurará que los pedidos se hagan de manera correcta. En caso de haber algún problema se podrá contactar con empleados y administradores.
-    \item\textbf{Disponibilidad:} los usuarios podrán acceder en todo momento a las funcionalidades del sistema ya que la base de datos estará en un servidor dedicado. Solo se hará inaccesible cuando haya mantenimiento o actualizaciones del sistema.
-    \item\textbf{Seguridad:} los datos de clientes, empleados y administradores estarán encriptados para poder asegurarlos frente a ataques externos. Toda la transferencia de datos se hará por protocolo \gls{https} para evitar fugas de datos.
-    \item\textbf{Mantenibilidad:} durante el desarrollo del sistema se hará una buena documentación para que el personal que entre al proyecto pueda entender el código y su funcionalidad sin demasiada dificultad. También se hará uso de sistemas de control de versiones como git para poder revertir versiones si fuese necesario.
+	\item\textbf{Fiabilidad:} el programa asegurará que los pedidos se hagan de manera correcta. En caso de haber algún problema se podrá contactar con empleados y administradores.
+	\item\textbf{Disponibilidad:} los usuarios podrán acceder en todo momento a las funcionalidades del sistema ya que la base de datos estará en un servidor dedicado. Solo se hará inaccesible cuando haya mantenimiento o actualizaciones del sistema.
+	\item\textbf{Seguridad:} los datos de clientes, empleados y administradores estarán encriptados para poder asegurarlos frente a ataques externos. Toda la transferencia de datos se hará por protocolo \gls{https} para evitar fugas de datos.
+	\item\textbf{Mantenibilidad:} durante el desarrollo del sistema se hará una buena documentación para que el personal que entre al proyecto pueda entender el código y su funcionalidad sin demasiada dificultad. También se hará uso de sistemas de control de versiones como git para poder revertir versiones si fuese necesario.
 \end{itemize}
