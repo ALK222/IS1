@@ -468,7 +468,31 @@ Este programa presenta tres tipos de usuarios: clientes, empleados y administrad
 \end{figure}
 \newpage
 \paragraph{Quitar producto}
-Se solicita la contraseña y usuario de administrador. Si estos son correctos, se busca el producto a eliminar, y se solicita modificar la BD, si es aprobada la solicitud, se elimina dicho producto de la BD, y se informa de que se a quitado. Sino, se informa de que no se ha permitido la modificación.
+\begin{table}[H]
+    \centering
+    \small
+    \begin{tabularx}{0.8\textwidth}{|p{3.5cm}|X|}
+        \hline
+        \rowcolor{lightgray}
+        \textbf{Nombre del caso}  & \textbf{Actualizar stock}                                                          \\
+        \hline
+        \textbf{Descripción}      & Se quita un producto de la \gls{bd}.                                               \\
+        \hline
+        \textbf{Actores}          & Administrador                                                                      \\
+        \hline
+        \textbf{Precondición}     & El usuario debe estar logueado y tener permisos de administrador.                  \\
+        \hline
+        \textbf{Secuencia normal} & 1.El usuario se loguea. \newline
+        2. Se busca el producto. \newline
+        3. Se solicita eliminar el producto \newline 4. Se aprueba la eliminación. \newline 5. Se elimina el producto. \\
+        \hline
+        \textbf{Postcondición}    & Se elimina el producto de la \gls{bd}                                              \\
+        \hline
+        \textbf{Excepciones}      & El producto no existe.
+        \newline El usuario no es administrador. \newline No se aprueba la eliminación.                                \\
+        \hline
+    \end{tabularx}
+\end{table}
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{Use_Cases/ProyectoIS_QuitarProducto.png}

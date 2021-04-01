@@ -8,3 +8,9 @@ build/
 *-blx.bib
 *.bcf
 *.run.xml
+*.acr
+*.agl
+*.bbl
+*.blg
+*.out
+*.toc
