@@ -4,5 +4,5 @@ Documentos de proyecto de una tienda de ropa para la asignatura de IS1 de la [UC
 
 ## Documentos
 
-- [SRS](.\p1)
-- [PDP](.\p2)
+- [SRS](/p1)
+- [PDP](/p2)
